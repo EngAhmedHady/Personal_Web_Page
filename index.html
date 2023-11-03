@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ahmed H. Hanfy Portfolio
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="images/Logo.png" type="image/icon type">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="FullBody">
+            <div class="TabTitle">
+                <img id="MyImage" src="images/Me2.jpg" alt="MyImage">
+                <button class="Tab" onclick="showPanel(0,'#fff');">
+                    <img src="images/ProfileIcon.png" 
+                         onmouseover="this.src='images/ProfileIconh.png'" 
+                         onmouseout = "this.src='images/ProfileIcon.png'"
+                         alt="Icon" class = "Icon">
+                    <br>
+                    About me
+                </button>
+                <button class="Tab" onclick="showPanel(1,'#fff')">
+                    <img src="images/ResumeIcon.png" 
+                         onmouseover="this.src='images/ResumeIconh.png'" 
+                         onmouseout = "this.src='images/ResumeIcon.png'"
+                         alt="Icon" class = "Icon">
+                    <br>
+                    Resume
+                </button>
+                <button class="Tab" onclick="showPanel(2,'#fff')">
+                    <img src="images/PortfolioIcon.png" 
+                         onmouseover="this.src='images/PortfolioIconh.png'" 
+                         onmouseout = "this.src='images/PortfolioIcon.png'"
+                         alt="Icon" class = "Icon">
+                    <br>
+                    Portfolio
+                </button>
+                <button class="Tab" onclick="showPanel(3,'#fff')">
+                    <img src="images/ContactMeIcon.png" 
+                         onmouseover="this.src='images/ContactMeIconh.png'" 
+                         onmouseout = "this.src='images/ContactMeIcon.png'"
+                         alt="Icon" class = "Icon">
+
+                    <br>
+                    Contact
+                </button>
+            </div>
+            
+            <div class="Content">
+                <h1>Ahmed H. Hanfy</h1>
+                <h2>Aerodynamic specialist / Scientific computing Engineer <br>/ Mechanical Engineer</h2>
+                <div class="divider"></div>
+                <h3 class = "TableTitle">Profile</h3>
+                <p id="Profile"> </p>
+                <form method="get" action="Documents\Resume.pdf" style="display: inline-block; margin: 5px;">
+                    <button class="DownloadCV" type="submit">Download Resume</button>
+                </form>
+                <form method="get" action="Documents\Ahmed Hanfy CV.pdf" style="display: inline-block;margin: 5px;">
+                    <button class="DownloadCV" type="submit">Download Full CV</button>
+                </form>
+                <form method="get" action="Documents\Ahmed Hanfy portfolio.pdf" style="display: inline-block;margin: 5px;">
+                    <button class="DownloadCV" type="submit">Download Portfolio</button>
+                </form>
+
+                <div class="divider"></div>
+                <h3 class = "TableTitle">My Latest News</h3>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7089547490772815874" height="500" width="80%" frameborder="" allowfullscreen="true" title="Embedded post"></iframe>
+                <!-- <div class='sk-ww-linkedin-profile-post' data-embed-id='172510'></div><script src='https://widgets.sociablekit.com/linkedin-profile-posts/widget.js' async defer></script> -->
+                
+                <div class="divider"></div>
+                <h3 class = "TableTitle">Contact info.</h3>
+                <div class="dividerDot" id="A"></div>
+
+                <table id="tblcsvdata">
+                    <tr>
+                        <td id="infoTitle" style="padding-top: 25px;"></td>
+                        <td id="info" style="padding-top: 25px;"></td>
+                    </tr>
+                </table>
+
+                <div class="dividerDot" id="B"></div>
+            </div>
+            <div class="Content" id = 'Resume'>
+                <h1>Resume</h1>
+                <h2>CURRICULUM VITA</h2>
+                <div class="divider"></div>
+                <h3>WORK EXPERIENCE</h3>
+                <div id = 'workExperince' class="contentText"></div>
+
+                <div class="divider"></div>
+                <h3>TRAININGS, SCIENTIFIC VISITS AND INTERNSHIPS</h3>
+                <div id = 'trainings' class="contentText"></div>
+
+                <div class="divider"></div>
+                <h3>EDUCATION</h3>
+                <div id = 'education' class="contentText"></div>
+
+                <div class="divider"></div>
+            </div>
+
+            <div class="Content">
+                <h1>Portfolio</h1>
+                <div class="divider"></div>
+                <h3>SKILLS</h3>
+                <div id = 'skills'>
+                <span id = 'Skill'>AutoDesk Inventor</span> 
+                    <span class="fa fa-star Ticks"></span>
+                    <span class="fa fa-star Ticks"></span>
+                    <span class="fa fa-star Ticks"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+
+            <div class="Content">
+                <h1>Contact</h1>
+            </div>
+
+            <div class="SocialMedia">
+                <div class="SMTit"><h4  class="SMTitle">Follow Me</h4></div>
+                <a  href="https://www.linkedin.com/in/engahmedhady/" target="_blank">
+                    <img class="SM" src="images/LinkedIn.png" 
+                                    onmouseover="this.src='images/LinkedInh.png'" 
+                                    onmouseout = "this.src='images/LinkedIn.png'" 
+                                    alt="Linkedin">
+                </a>
+                <a  href="https://github.com/EngAhmedHady" target="_blank">
+                    <img class="SM" src="images/Github.png" 
+                                    onmouseover="this.src='images/Githubh.png'" 
+                                    onmouseout = "this.src='images/Github.png'"
+                                    alt="Github">
+                </a>
+                <a  href="https://www.youtube.com/@AhmedHady92/" target="_blank"> 
+                    <img class="SM" src="images/Youtube.png" 
+                                    onmouseover="this.src='images/Youtubeh.png'" 
+                                    onmouseout = "this.src='images/Youtube.png'"
+                                    alt="Youtube">
+                </a>
+            </div>
+        </div>
+        <script src="js/Functions.js"></script>
+    </body>
+</html>
