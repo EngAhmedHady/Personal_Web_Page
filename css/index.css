@@ -336,12 +336,26 @@ tr{
     font-family: BravaSlabRegular;
 }
 
-#workingPeriod{
+.workingPeriod{
     font-family: BravaSlabExtraLight;
+    font-weight: bold;
     font-size: 12pt;
-    margin: -4px 0px;
+    margin: -2px 0px;
     color: #F7444E;
 }
+
+.Date{
+    display: inline-block;
+}
+
+#present {
+    width: 65px;
+    clip-path: polygon(11% 5%, 97% 5%, 100% 11%, 100% 89%, 97% 95%, 11% 95%, 8% 89%, 8% 70%, 0% 50%, 8% 30%, 8% 11%);
+    background-color: #009999;
+    color: #fff;
+    text-align: right;
+    padding-right: 4px;
+  }
 
 #CompanyLink{
     color: #002C3E;
@@ -358,16 +372,20 @@ tr{
 }
 /* ----------------------------------------- */
 
-#Event{
-    width: 10px;
-    height: 10px;
+.Event{
+    width: 15px;
+    height: 15px;
     position: relative;
     margin: 0px;
     border-spacing: 0px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid #009999;
     background-color: #000;
-    
+    color: #fff;
+    /* vertical-align: text-top; */
+    line-height: 13px; 
+    text-align: center; 
+    font-size: 9pt;
 }
 
 #EventLine{
@@ -420,13 +438,40 @@ tr{
     margin: 0px;
     width: 10px;
     transform: translate(50%, 5px);
-    /* left: -6%; */
-    height: calc(100% - 15px);
+    left: 20%;
+    height: calc(100% - 20px);
     border-left: 1px solid rgb(140, 140, 140, 0.5);
     
 }
 /* -----------------------------------------*/
-#subPeriod{
+.collapsible{
+    cursor: pointer;
+    margin-top: -3px;
+}
+
+.collapsible:hover{
+    background-color: #009999;
+    color: #fff;
+    border-color: #000;
+}
+
+.collapsible:active{
+    background-color: #F7444E;
+}
+
+.collapsible:after {
+    /* content: '▶'; */
+    content: '+';
+    line-height: 13px; 
+}
+  
+.active:after {
+    /* content: "▼"; Unicode character for "minus" sign (-) */
+    content: '-';
+    line-height: 15px; 
+}
+
+.subPeriod{
     font-family: BravaSlabExtraLight;
     font-size: 12pt;
     color: #F7444E;
@@ -434,10 +479,11 @@ tr{
     margin: 0px;
     position: relative;
     display:inline-block;
+    font-weight: bold;
     /* to collapse */
-    /* height: 0px;
+    /* height: 0px; */
     display: none;
-    overflow: hidden; */
+    overflow: hidden;
     /* ----------- */
     width: calc(100% - 30px);
     top: -4px;
@@ -525,13 +571,13 @@ tr{
     padding-left: 0px;
 }
 
-#Objects{
+.Objects{
     margin-top: 0px;
     margin-bottom: 3px;
     /* to collapse */
-    /*height: 0px;
+    /* height: 0px; */
     display: none;
-    overflow: hidden;*/
+    overflow: hidden;
     /* ----------- */
 }
 
@@ -642,7 +688,7 @@ tr{
         padding-left: 5px;
     }
 
-    #Event{
+    .Event{
         width: 0;
         height: 0;
         border-spacing: 0;
@@ -650,7 +696,17 @@ tr{
         border: 0;
     }
 
-    #EventLine, #subEventLine{
+    .collapsible{
+        width: 15px;
+        height: 15px;
+        border-spacing: 0;
+        border-radius: 15px;
+        border: 2px solid #009999;
+        cursor: pointer;
+        margin-top: -5px;
+    }
+
+    .EventLine, #subEventLine{
         width: 0;
         height: 0;
     }
@@ -660,7 +716,7 @@ tr{
         padding-left: 5px;
         font-size: 9pt;
         top: 2px;
-        margin-bottom: 50px;
+        /* margin-bottom: px; */
     }
 
     #SubTitleEx, #SubDetailsTitle,#TalkTitle{
