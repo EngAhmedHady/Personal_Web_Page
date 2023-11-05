@@ -9,6 +9,29 @@ var LastObj = 0
 // var Tra = ['Training1','Training2','Training3']
 // var Edu = ['Education1','Education2','Education3']
 
+let CVList = document.querySelectorAll('.CVlist')
+let CVData = document.querySelectorAll('.CVData')
+
+for (let i = 0; i < CVList.length; i++){
+    CVList[i].addEventListener("click", function(){
+        for (let j = 0; j<CVList.length; j++){
+            CVList[j].classList.remove('activated');
+        }
+        this.classList.add('activated');
+
+        let dataFilter = this.getAttribute('data-filter');
+        for (let k =0; k < CVData.length; k++){
+            CVData[k].classList.add('hide');
+            CVData[k].classList.remove('active');
+            if(CVData[k].getAttribute('data-item') == dataFilter || dataFilter == "all"){
+                CVData[k].classList.add('active')
+                CVData[k].classList.remove('hide')
+            }
+        }
+    })
+}
+
+
 PIndex = sessionStorage.getItem("PIndex");
 if (PIndex != null)
 {

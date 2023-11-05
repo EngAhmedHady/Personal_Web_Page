@@ -248,7 +248,7 @@ h3{
     width: 30px;
     height: 10px;
     position: relative;
-    display: flex ;
+    /* display: flex; */
     transform: translate(-50%, 0);
     left: 49.75%;
     margin-top: 50px;
@@ -310,6 +310,51 @@ tr{
 }
 
 /* Resume */
+.HeaderItems{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.CVlist{
+    list-style: none;
+    margin: 5px;
+    padding: 3px 5px;
+    background-color: #fff;
+    color: #002c3e;
+    border: 1px solid #002c3e;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-size: 13pt;
+}
+
+.CVlist:hover{
+    background-color: #78bcc4;
+    color: #fff;
+    padding-right: 3px;
+}
+
+.CVlist.activated{
+    background-color: #f7444e;
+    color: #fff;
+    padding-right: 3px;
+    transition: all 0.8s
+}
+
+.CVData.hide{
+    display: none;
+    overflow: hidden;
+    height: 0px;
+}
+
+.CVData.active:before,.CVData.active:after {
+    content:'';
+    display: none;
+}
+
 #expMainInfo{
     display: flex;
     position: relative;
@@ -461,7 +506,7 @@ tr{
 
 .collapsible:after {
     /* content: '▶'; */
-    content: '+';
+    content: '>';
     line-height: 13px; 
 }
   
@@ -649,7 +694,7 @@ tr{
         width:90%
     }
 
-    #workExperince{
+    .workExperince{
         display: block;
         position: relative;
         float: left;
