@@ -894,6 +894,13 @@ tr{
         margin: 0 5% 0 5%;
     }
 
+    .Tabs{
+        top: 0px;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        height: 100%;
+    }
+
     .Tab{
         width: 25%;
         float: center;
