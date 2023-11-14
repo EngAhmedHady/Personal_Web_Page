@@ -305,6 +305,7 @@
                     <div class = "CVData" data-item = "Education">
                         <div class="divider"></div>
                         <h3>EDUCATION</h3>
+                        <!-- PhD -->
                         <div class = 'education contentText'>
                             <div id="Experience">
                                 <div id="expMainInfo">
@@ -439,7 +440,8 @@
                                 </div>
                             </div>
                         </div>
-                        
+
+                        <!-- Masters -->
                         <div class = 'education contentText'>
                             <div id="Experience">
                                 <div id="expMainInfo">
@@ -495,11 +497,12 @@
                             </div>
                         </div>
 
+                        <!-- Bachelor -->
                         <div class = 'education contentText'>
                             <div id="Experience">
                                 <div id="expMainInfo">
                                     <div id="CompanyLogo">
-                                        <img id="Complogo" src="images/AUlogo.png" alt="Alexandria University (AU) Logo">
+                                        <img id="Complogo" src="images/AUlogo.png" alt="Alexandria University (AU) Logo" style="width: 80%;">
                                     </div>
                                     <div id="ExpTitles">
                                         <div class="workingPeriod">October 2011 - July 2016</div>
@@ -517,7 +520,7 @@
                                         <div id="TitleOfSubDetails">
                                             <h5 id="SubDetailsTitle" style="text-decoration: underline;top :0px;">Relevant coursework</h5>
                                         </div>    
-                                            <ul><il>Mathematics, Physics, Fluid mechanics I-II, Gas dynamics, Thermodynamics I-II, Heat transfer, Technical writing, Mechanical design I-II-III.</il></ul>
+                                            <ul class = "description"><il>Mathematics, Physics, Fluid mechanics I-II, Gas dynamics, Thermodynamics I-II, Heat transfer, Technical writing, Mechanical design I-II-III.</il></ul>
                                     </div>
                                 </div>
                             </div>
@@ -547,11 +550,11 @@
                                 </div>
                                 <div id="ExpDetails">
                                     <h5 id="SubTitleEx">Hydro-electric stations training centre, Aswan </h5>
-                                    <ul><li>In-site training within production and hydraulic maintenance sectors.</li></ul>
+                                    <ul class = "description"><li>In-site training within production and hydraulic maintenance sectors.</li></ul>
                                     <h5 id="SubTitleEx">MANTRAC (Caterpillar Dealer), Alexandria </h5>
-                                    <ul><li>In-site training within Diesel engines and hydraulic maintenance.</li></ul>
+                                    <ul class = "description"><li>In-site training within Diesel engines and hydraulic maintenance.</li></ul>
                                     <h5 id="SubTitleEx">Ansys Fluent Workshop, ASME Alexandria chapter, Alexandria</h5>
-                                    <ul><li>Workshop covering CFD basics and implementations using Ansys Fluent.</li></ul>
+                                    <ul class = "description"><li>Workshop covering CFD basics and implementations using Ansys Fluent.</li></ul>
                                 </div>
                             </div>
                         </div>
@@ -561,18 +564,24 @@
                         <div class="divider"></div>
                         <h3>SKILLS</h3>
                         <div class = 'Skills'>
-                            <table id="tblcsvdata">
+                            <div id = "RatedSkills">
+                                <!-- <span class = 'Skill'>AutoDesk Inventor</span> 
+                                <span class="fa fa-star Ticks"></span>
+                                <span class="fa fa-star Ticks"></span>
+                                <span class="fa fa-star Ticks"></span>
+                                <span class="fa fa-star Ticks"></span>
+                                <span class="fa fa-star"></span> -->
+                            </div>
+                            <div id = "OtherSkills"></div>
+
+                            <!-- <table id="tblSkillsData">
                                 <tr>
-                                    <td id="infoTitle" style="padding-top: 25px;"></td>
-                                    <td id="info" style="padding-top: 25px;"></td>
+                                    <td id="RatedSkills" style="padding-top: 25px;"></td>
+                                    <td id="OtherSkills" style="padding-top: 25px;"></td>
                                 </tr>
-                            </table>
-                        <span class = 'Skill'>AutoDesk Inventor</span> 
-                            <span class="fa fa-star Ticks"></span>
-                            <span class="fa fa-star Ticks"></span>
-                            <span class="fa fa-star Ticks"></span>
-                            <span class="fa fa-star Ticks"></span>
-                            <span class="fa fa-star"></span>
+                            </table> -->
+                        
+
                         </div>
                         <div class = 's' class="contentText"></div>
                     </div>
@@ -592,6 +601,47 @@
 
             <div class="Content" id = 'Contact'>
                 <h1>Contact</h1>
+                <h2>SAY HELLO!</h2>
+                <div class="divider" id = Conatactme></div>
+                <h3>You can follow me Here</h3>
+                
+                <div class = "FollowMeHere">
+                    <a  href="https://www.linkedin.com/in/engahmedhady/" target="_blank">
+                        <img class="SMContact" src="images/LinkedIn.png" 
+                                        onmouseover="this.src='images/LinkedInh.png'" 
+                                        onmouseout = "this.src='images/LinkedIn.png'" 
+                                        alt="Linkedin">
+                    </a>
+                    <a  href="https://github.com/EngAhmedHady" target="_blank">
+                        <img class="SMContact" src="images/Github.png" 
+                                        onmouseover="this.src='images/Githubh.png'" 
+                                        onmouseout = "this.src='images/Github.png'"
+                                        alt="Github">
+                    </a>
+                    <a  href="https://www.youtube.com/@AhmedHady92/" target="_blank"> 
+                        <img class="SMContact" src="images/Youtube.png" 
+                                        onmouseover="this.src='images/Youtubeh.png'" 
+                                        onmouseout = "this.src='images/Youtube.png'"
+                                        alt="Youtube">
+                    </a>
+                </div>
+                <br>
+
+                <div class="divider" id = Conatactme></div>
+                <h3>REACH ME HERE</h3>
+                <form action="php/contact.php" method="post" class="Form">
+                    <div class="contactInfo">
+                        <input type="text" id="fname" name="FullName" placeholder="Name">
+                        <input type="text" id="email" name="Email" placeholder="E-mail">
+                    </div>
+                    
+                    <input type="text" id="subjectTitle" name="Subject" placeholder="Subject">
+                    
+                    <textarea id="message" name="message" placeholder="Write something"></textarea>
+                    <input id="Submit" class="DownloadCV" type="reset" value="Clear">
+                    <input id="Submit" class="DownloadCV" type="submit" value="Submit">
+                    
+                </form>
             </div>
 
             <div class="SocialMedia">
