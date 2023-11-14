@@ -444,6 +444,59 @@ tr{
     font-size: 9pt;
 }
 
+.ToggleBtn{
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    border-radius: 20px;
+    border: 3px solid #009999;
+    background-color: #000;
+    cursor: pointer;
+    line-height: 16px;
+    font-family: BravaSlabBold;
+    font-size: 14pt;
+    text-align: center;
+    color: #fff;
+}
+
+.ExpAll{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+    width: 150px;
+    
+}
+
+#ExpAllTxt{
+    margin-right:5px; 
+    margin-top: 4px; 
+    font-family: BravaSlabBold;
+}
+
+
+.ToggleBtn:hover{
+    background-color: #009999;
+    color: #fff;
+    border-color: #000;
+}
+
+.ToggleBtn:active{
+    background-color: #F7444E;
+}
+
+.ToggleBtn:after {
+    /* content: '▶'; */
+    content: '>';
+    line-height: 13px; 
+}
+  
+.ToggleBtn.Expanded:after {
+    /* content: "▼"; Unicode character for "minus" sign (-) */
+    content: '-';
+    line-height: 20px; 
+}
+
+
 .subEventPoint{
     width: 13px;
     height: 13px;
@@ -549,14 +602,14 @@ tr{
 
 .collapsible:after {
     /* content: '▶'; */
-    content: '>';
+    /* content: '>'; */
     line-height: 13px; 
 }
   
 .active:after {
     /* content: "▼"; Unicode character for "minus" sign (-) */
-    content: '-';
-    line-height: 15px; 
+    /* content: '-'; */
+    line-height: 20px; 
 }
 
 .subPeriod{

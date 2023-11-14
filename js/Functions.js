@@ -83,6 +83,8 @@ var Objects = document.getElementsByClassName("Objects")
 var subPeriods = document.getElementsByClassName("subPeriod")
 var confCont = document.getElementsByClassName("ConferencesContent");
 
+for (let i = 0; i < coll.length; i++) {coll[i].textContent = '>'}
+
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -98,11 +100,13 @@ for (let i = 0; i < coll.length; i++) {
         subPeriod.style.display = "none";
         Object.style.maxHeight = "0px";
         subPeriod.style.maxHeight = "0px";
+        this.textContent = '>'
     } else {
         Object.style.display = "block";
         subPeriod.style.display = "block";
         Object.style.maxHeight = Object.scrollHeight + "px";
         subPeriod.style.maxHeight = subPeriod.scrollHeight + "px";
+        this.textContent = '-'
     }
 
     if (this.id == "ConferencesCol"){
@@ -113,22 +117,60 @@ for (let i = 0; i < coll.length; i++) {
                 confCont[k].style.display = "none";
                 confCont[k].style.maxHeight = "0px";
                 confCont[k].style.marginTop = "0px";
+                this.textContent = '>'
             } else {
                 confCont[k].style.display = "flex";
                 confCont[k].style.marginTop = "10px";
                 confCont[k].style.maxHeight = confCont[k].scrollHeight + "px";
+                this.textContent = '-'
             }
         }
-       
-        //         confCont[k].style.maxHeight = "0px";
-        // confCont[0].style.display = "block";
-        // confCont[0].style.maxHeight = confCont.scrollHeight + "px";
-        //         confCont[k].style.maxHeight = confCont.scrollHeight + "px";
-        // 
     }
 
   });
 }
+
+var ToggleBtn = document.getElementsByClassName("ToggleBtn");
+var exp = 0;
+var ExpTxt = document.getElementById("ExpAllTxt")
+ExpTxt.textContent = "EXPAND ALL"
+for (let i = 0; i < ToggleBtn.length; i++) {
+    ToggleBtn[i].addEventListener("click", function() {
+      this.classList.toggle("Expanded");
+      if (exp == 0){
+        for (let j = 0; j < Objects.length; j++) {
+            Objects[j].style.display = "block";
+            subPeriods[j].style.display = "block";
+            Objects[j].style.maxHeight = Objects[j].scrollHeight + "px";
+            subPeriods[j].style.maxHeight = subPeriods[j].scrollHeight + "px";
+            coll[j].textContent = '-'
+        }
+        for (let k = 0; k < confCont.length; k++) {
+            confCont[k].style.display = "flex";
+            confCont[k].style.marginTop = "10px";
+            confCont[k].style.maxHeight = confCont[k].scrollHeight + "px";
+        }
+        ExpTxt.textContent = "COLLAPSE ALL"
+        exp = 1;
+      }
+    else{
+        for (let j = 0; j < Objects.length; j++) {
+            Objects[j].style.display = "none";
+            subPeriods[j].style.display = "none";
+            Objects[j].style.maxHeight = "0px";
+            subPeriods[j].style.maxHeight = "0px";
+            coll[j].textContent = '>'
+        }
+        for (let k = 0; k < confCont.length; k++) {
+            confCont[k].style.display = "none";
+            confCont[k].style.maxHeight = "0px";
+            confCont[k].style.marginTop = "0px";
+        }
+        exp = 0;
+        ExpTxt.textContent = "EXPAND ALL"
+    }
+    });
+  }
 
 // 
 

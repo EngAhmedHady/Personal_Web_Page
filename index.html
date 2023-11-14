@@ -48,7 +48,7 @@
                 </button>
             </div>
             
-            <div class="Content">
+            <div class="Content" id = 'Home'>
                 <h1>Ahmed H. Hanfy</h1>
                 <h2>Aerodynamic specialist / Scientific computing Engineer / Mechanical Engineer</h2>
                 <div class="divider"></div>
@@ -82,6 +82,7 @@
 
                 <div class="dividerDot" id="B"></div>
             </div>
+
             <div class="Content" id = 'Resume'>
                 <h1>Resume</h1>
                 <h2>CURRICULUM VITA</h2>
@@ -93,7 +94,14 @@
                         <li class = "CVlist" data-filter = "Education">EDUCATION</li>
                         <li class = "CVlist" data-filter = "training">TRAININGS</li>
                         <li class = "CVlist" data-filter = "skills">SKILLS</li>
+                        <li class = "CVlist" data-filter = "activities">ACTIVITIES</li>
                     </ul>
+                    <br>
+                    <div class = "ExpAll">
+                        <div id = "ExpAllTxt"></div> 
+                        <div class="ToggleBtn"></div>
+                    </div>
+
                     <div class = "CVData" data-item = "workexperince">
                         <div class="divider"></div>
                         <h3>WORK EXPERIENCE</h3>
@@ -517,45 +525,48 @@
 
                     </div>
 
-
                     <div class = "CVData" data-item = "training">
                         <div class="divider"></div>
                         <h3>TRAININGS, SCIENTIFIC VISITS AND INTERNSHIPS</h3>
-                            <div class = 'trainings contentText'>
-                                <div id="Experience">
-                                    <div id="expMainInfo">
-                                        <div id="CompanyLogo">
-                                            <img id="Complogo" src="images/AUlogo.png" alt="Alexandria University (AU) Logo">
-                                        </div>
-                                        <div id="ExpTitles">
-                                            <div class="workingPeriod">October 2011 - July 2016</div>
-                                            <a id="Jobtitle">Bachelor of Science (B.Sc.), Mechanical Engineering</a>
-                                            <br><a id="CompanyLink" href="https://eng.alexu.edu.eg/index.php/en/">Alexandria University (AU)</a>
-                                            <br><p id="WorkAddress">(Alexandria - Egypt)</p>                                
-                                        </div>
+                        <div class = 'trainings contentText'>
+                            <div id="Experience">
+                                <div id="expMainInfo">
+                                    <div id="CompanyLogo">
+                                        <img id="Complogo" src="images/Trainings.png" alt="Undergraduate summer trainings Logo">
                                     </div>
-                                    <div id = "FullEvent">
-                                        <div class = "Event"></div>
-                                        <div id = "EventLine"></div>
+                                    <div id="ExpTitles">
+                                        <h4 class="workingPeriod">August 2013 - August 2015</h4>
+                                        <a id="Jobtitle">Undergraduate summer trainings</a>
+                                        <br>
+                                        <p id="WorkAddress">(Egypt)</p>
                                     </div>
-                                    <div id="ExpDetails">
-                                        <div id="jobSummary">
-                                            <div id="TitleOfSubDetails">
-                                                <h5 id="SubDetailsTitle" style="text-decoration: underline;top :0px;">Relevant coursework</h5>
-                                            </div>    
-                                                <ul><il>Mathematics, Physics, Fluid mechanics I-II, Gas dynamics, Thermodynamics I-II, Heat transfer, Technical writing, Mechanical design I-II-III.</il></ul>
-                                        </div>
-                                    </div>
+                                </div>
+                                <div>
+                                    <div class="Event"></div>
+                                    <div id="EventLine"></div>
+                                </div>
+                                <div id="ExpDetails">
+                                    <h5 id="SubTitleEx">Hydro-electric stations training centre, Aswan </h5>
+                                    <ul><li>In-site training within production and hydraulic maintenance sectors.</li></ul>
+                                    <h5 id="SubTitleEx">MANTRAC (Caterpillar Dealer), Alexandria </h5>
+                                    <ul><li>In-site training within Diesel engines and hydraulic maintenance.</li></ul>
+                                    <h5 id="SubTitleEx">Ansys Fluent Workshop, ASME Alexandria chapter, Alexandria</h5>
+                                    <ul><li>Workshop covering CFD basics and implementations using Ansys Fluent.</li></ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     
                     <div class = "CVData" data-item = "skills">
                         <div class="divider"></div>
                         <h3>SKILLS</h3>
                         <div class = 'Skills'>
+                            <table id="tblcsvdata">
+                                <tr>
+                                    <td id="infoTitle" style="padding-top: 25px;"></td>
+                                    <td id="info" style="padding-top: 25px;"></td>
+                                </tr>
+                            </table>
                         <span class = 'Skill'>AutoDesk Inventor</span> 
                             <span class="fa fa-star Ticks"></span>
                             <span class="fa fa-star Ticks"></span>
@@ -566,14 +577,20 @@
                         <div class = 's' class="contentText"></div>
                     </div>
 
+                    <div class = "CVData" data-item = "activities">
+                        <div class="divider"></div>
+                        <h3>ACTIVITIES</h3>
+                    </div>
+
                 </section>
             </div>
-            <div class="Content">
+
+            <div class="Content" id = 'Portfolio'>
                 <h1>Portfolio</h1>
                 <div class="divider"></div>
             </div>
 
-            <div class="Content">
+            <div class="Content" id = 'Contact'>
                 <h1>Contact</h1>
             </div>
 
