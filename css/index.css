@@ -410,7 +410,7 @@ tr{
     color: #fff;
     text-align: right;
     padding-right: 4px;
-  }
+}
 
 #CompanyLink{
     color: #002C3E;
@@ -469,7 +469,7 @@ tr{
 
 #ExpAllTxt{
     margin-right:5px; 
-    margin-top: 4px; 
+    margin-top: 2px; 
     font-family: BravaSlabBold;
 }
 
@@ -553,7 +553,9 @@ tr{
     float: left;
 }
 
-
+.description{
+    margin: 0px;
+}
 /* -----------------------------------------*/
 #SubEvent{
     width: 15px;
