@@ -273,51 +273,60 @@ function readtxtFile(FilePath, ParagraphId){
     request.send();
 }
 
-function skillsFile(FilePath){   
-    var request = new XMLHttpRequest();
-    request.open('GET', FilePath, true);
-    request.responseType = 'blob';
-    request.onload = function() {
-        var reader = new FileReader();
-        reader.readAsText(request.response); // -------------------------------------- Read file as string
-        // ************** Load event **************
-        reader.onload = function(event) {
-            var csvdata = event.target.result; // ---------------------------------------------------- Read file data
-            var rowData = csvdata.split('\n'); // ---------------------------------------------------- Split by line break to gets rows Array
-            var SkillsData  = document.createElement("div");
-            // Loop on the row Array (change row=0 if you also want to read 1st row)
-            for (var row = 0; row < rowData.length; row++) {
-                rowColData = rowData[row].split(','); // ------------------------------------------- Split by comma (,) to get column Array
-                if (rowColData[0] != 'Other'){
-                    var SkillData  = document.createElement("div");
-                    // let NewSkill = document.createElement("span"); 
-                    SkillData.classList.add("Skill");
-                    SkillData.textContent = "Hello " + row;
-                    // SkillData.appendChild(NewSkill);
+// function skillsFile(FilePath){   
+//     var request = new XMLHttpRequest();
+//     request.open('GET', FilePath, true);
+//     request.responseType = 'blob';
+//     request.onload = function() {
+//         var reader = new FileReader();
+//         reader.readAsText(request.response); // -------------------------------------- Read file as string
+//         // ************** Load event **************
+//         reader.onload = function(event) {
+//             var csvdata = event.target.result; // ---------------------------------------------------- Read file data
+//             var rowData = csvdata.split('\n'); // ---------------------------------------------------- Split by line break to gets rows Array
+//             var SkillsData  = document.createElement("div");
+//             // Loop on the row Array (change row=0 if you also want to read 1st row)
+//             for (var row = 0; row < rowData.length; row++) {
+//                 rowColData = rowData[row].split(','); // ------------------------------------------- Split by comma (,) to get column Array
+//                 if (rowColData[0] != 'Other'){
+//                     var SkillData  = document.createElement("div");
+//                     // let NewSkill = document.createElement("span"); 
+//                     SkillData.classList.add("Skill");
+//                     SkillData.textContent = "Hello " + row;
+//                     // SkillData.appendChild(NewSkill);
 
-                    console.log(rowColData[1], parseInt(rowColData[2],10))
-                    // for (let star = 0; star < 5; star++){
-                    //     let NewStar = document.createElement("span");
-                    //     NewStar.classList.add("fa");
-                    //     NewStar.classList.add("fa-star");
-                    //     console.log(parseInt(rowColData[2],10))
-                    //     if (star < parseInt(rowColData[2],10)) NewStar.classList.add("Ticks");
-                    //     SkillData.appendChild(NewStar);
-                    // }
+//                     console.log(rowColData[1], parseInt(rowColData[2],10))
+//                     // for (let star = 0; star < 5; star++){
+//                     //     let NewStar = document.createElement("span");
+//                     //     NewStar.classList.add("fa");
+//                     //     NewStar.classList.add("fa-star");
+//                     //     console.log(parseInt(rowColData[2],10))
+//                     //     if (star < parseInt(rowColData[2],10)) NewStar.classList.add("Ticks");
+//                     //     SkillData.appendChild(NewStar);
+//                     // }
                     
-                }
-                else {
+//                 }
+//                 else {
                     
-                }
-                SkillsData.appendChild(SkillData);
-                document.getElementById("RatedSkills").appendChild(SkillsData)
-                RatedSkills.innerHTML = rowColData[1];
-            }
+//                 }
+//                 SkillsData.appendChild(SkillData);
+//                 document.getElementById("RatedSkills").appendChild(SkillsData)
+//                 RatedSkills.innerHTML = rowColData[1];
+//             }
             
-        }
-    };
-    request.send();
+//         }
+//     };
+//     request.send();
+// }
+
+function myNewFunction(sel) {
+    if (sel.options[sel.selectedIndex].value == 'Aero') {window.open("Documents/Ahmed_Hanfy_Resume.pdf");}
+    else if (sel.options[sel.selectedIndex].value == 'Mech') {window.open("Documents/Resume_Ahmed_Hanfy.pdf");}
+    else if (sel.options[sel.selectedIndex].value == 'Data') {window.open("Documents/Ahmed-Hanfy-Resume.pdf");}
+    // alert(sel.options[sel.selectedIndex].value == );
 }
+
+
 
 
                 // Loop on the row column Array

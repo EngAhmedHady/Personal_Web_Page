@@ -54,9 +54,18 @@
                 <div class="divider"></div>
                 <h3 class = "TableTitle">Profile</h3>
                 <p id="Profile"> </p>
-                <form method="get" action="Documents\Resume.pdf" style="display: inline-block; margin: 5px;">
-                    <button class="DownloadCV" type="submit">Download Resume</button>
-                </form>
+
+                <select name="Select Resume" id="Resume" class="DownloadCV" onChange="myNewFunction(this);" style="display: inline-block;margin: 5px;">
+                    <option value="" selected disabled hidden>Resume</option>
+                    <option value="Aero" class = "ResumeOptions">Aerodynamics Engineer</option>
+                    <option value="Mech" class = "ResumeOptions">Mechanical Engineer</option>
+                    <option value="Data" class = "ResumeOptions">Data Analyst</option>
+                </select>
+                
+                <!-- <form method="get" action="Documents\Resume.pdf" style="display: inline-block; margin: 5px;">
+                    
+                   <button class="DownloadCV" type="submit">Download Resume</button>
+                </form> -->
                 <form method="get" action="Documents\Ahmed Hanfy CV.pdf" style="display: inline-block;margin: 5px;">
                     <button class="DownloadCV" type="submit">Download Full CV</button>
                 </form>
@@ -563,31 +572,33 @@
                     <div class = "CVData" data-item = "skills">
                         <div class="divider"></div>
                         <h3>SKILLS</h3>
+                        <!-- <div id = "RatedSkills">
+                            
+                        </div> -->
                         <div class = 'Skills'>
-                            <div id = "RatedSkills">
-                                <!-- <span class = 'Skill'>AutoDesk Inventor</span> 
-                                <span class="fa fa-star Ticks"></span>
-                                <span class="fa fa-star Ticks"></span>
-                                <span class="fa fa-star Ticks"></span>
-                                <span class="fa fa-star Ticks"></span>
-                                <span class="fa fa-star"></span> -->
-                            </div>
-                            <div id = "OtherSkills"></div>
+                            <p style="font-family: BravaSlabSemiBold; ">
+                                Inventor | AutoCAD | Siemens NX | MATLAB | Ansys (Fluent) | LabVIEW | Python (OpenCV, SciPy, Pandas, etc.) | C++ (Vector, OpenMPI, etc.) |
+                                Fortran | Photoshop | 3D Max | 3D printing | Manufacturing | Pneumatics circuits | FEA |
+                                Mechanical Drawing | Robotics | MATLAB GUI | C# | JavaScript | Analysis | PCA | Dataset Analysis |
+                                Montecarlo simulation | OOP | Heat transfer | Microsoft Office | Linux |
+                            </p>
+                           
+                            <!-- <div id = "OtherSkills"></div>
 
-                            <!-- <table id="tblSkillsData">
+                            <table id="tblSkillsData">
                                 <tr>
                                     <td id="RatedSkills" style="padding-top: 25px;"></td>
                                     <td id="OtherSkills" style="padding-top: 25px;"></td>
                                 </tr>
-                            </table> -->
+                            </table> 
                         
 
-                        </div>
+                        </div> -->
                         <div class = 's' class="contentText"></div>
                     </div>
-
+<!-- 
                     <div class = "CVData" data-item = "activities">
-                        <div class="divider"></div>
+                        <div class="divider"></div> -->
                         <h3>ACTIVITIES</h3>
                     </div>
 
@@ -629,7 +640,7 @@
 
                 <div class="divider" id = Conatactme></div>
                 <h3>REACH ME HERE</h3>
-                <form action="php/contact.php" method="post" class="Form">
+                <form action="https://formsubmit.co/c656275cae47098270484771d1898010" method="post" class="Form">
                     <div class="contactInfo">
                         <input type="text" id="fname" name="FullName" placeholder="Name">
                         <input type="text" id="email" name="Email" placeholder="E-mail">
