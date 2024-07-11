@@ -55,6 +55,15 @@
                 <h3 class = "TableTitle">Profile</h3>
                 <p id="Profile"> </p>
 
+                <!-- <div class="DownloadCV">
+                    <button onclick="myNewFunction(this)" class="dropbtn">Resume</button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#">Aerodynamics Engineer</a>
+                      <a href="#">Mechanical Engineer</a>
+                      <a href="#">Data Analyst</a>
+                    </div>
+                </div> -->
+
                 <select name="Select Resume" id="Resume" class="DownloadCV" onChange="myNewFunction(this);" style="display: inline-block;margin: 5px;">
                     <option value="" selected disabled hidden>Resume</option>
                     <option value="Aero" class = "ResumeOptions">Aerodynamics Engineer</option>
@@ -75,7 +84,7 @@
 
                 <div class="divider"></div>
                 <h3 class = "TableTitle">My Latest News</h3>
-                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7089547490772815874" height="500" width="80%" frameborder="" allowfullscreen="true" title="Embedded post"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7173271560793767937" height="1058" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
                 <!-- <div class='sk-ww-linkedin-profile-post' data-embed-id='172510'></div><script src='https://widgets.sociablekit.com/linkedin-profile-posts/widget.js' async defer></script> -->
                 
                 <div class="divider"></div>
@@ -608,6 +617,57 @@
             <div class="Content" id = 'Portfolio'>
                 <h1>Portfolio</h1>
                 <div class="divider"></div>
+                <section>
+                    <ul class = HeaderItems>
+                        <li class = "CVlist activated" data-filter = "all">Show all</li>
+                        <li class = "CVlist" data-filter = "CAD">CAD</li>
+                        <li class = "CVlist" data-filter = "CFD">CFD</li>
+                        <li class = "CVlist" data-filter = "CODE">CODE</li>
+                        <li class = "CVlist" data-filter = "PS">PS designs</li>
+                        <li class = "CVlist" data-filter = "Others">Others</li>
+                    </ul>
+                    <div class="row">
+                        <div class="column">
+                          <img class="P-img" src="images\Portfolio\IMP PAN\LabScheme1.png">
+                          <!-- <img src="rocks.jpg">
+                          <img src="falls2.jpg">
+                          <img src="paris.jpg">
+                          <img src="nature.jpg">
+                          <img src="mist.jpg">
+                          <img src="paris.jpg"> -->
+                        </div>
+                        <div class="column">
+                          <!-- <img src="underwater.jpg">
+                          <img src="ocean.jpg">
+                          <img src="wedding.jpg">
+                          <img src="mountainskies.jpg">
+                          <img src="rocks.jpg">
+                          <img src="underwater.jpg"> -->
+                        </div>
+                        <div class="column">
+                          <!-- <img src="wedding.jpg">
+                          <img src="rocks.jpg">
+                          <img src="falls2.jpg">
+                          <img src="paris.jpg">
+                          <img src="nature.jpg">
+                          <img src="mist.jpg">
+                          <img src="paris.jpg"> -->
+                        </div>
+                        <div class="column">
+                          <!-- <img src="underwater.jpg">
+                          <img src="ocean.jpg">
+                          <img src="wedding.jpg">
+                          <img src="mountainskies.jpg">
+                          <img src="rocks.jpg">
+                          <img src="underwater.jpg"> -->
+                        </div>
+                      </div>
+                </section>
+                <!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.4.9/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/DVu48gJKW7HpZvgR/scene.splinecode"></spline-viewer> -->
+
+
+
             </div>
 
             <div class="Content" id = 'Contact'>
