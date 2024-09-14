@@ -84,6 +84,8 @@ var coll = document.getElementsByClassName("collapsible");
 var Objects = document.getElementsByClassName("Objects")
 var subPeriods = document.getElementsByClassName("subPeriod")
 var confCont = document.getElementsByClassName("ConferencesContent");
+var SkillsDegs = document.getElementsByClassName("SkillsDegree");
+var SkillsD = document.getElementsByClassName("skillD");
 // single Item Collapsible
 for (let i = 0; i < coll.length; i++) {coll[i].textContent = '>'}
 
@@ -94,6 +96,7 @@ for (let i = 0; i < coll.length; i++) {
         if (this == coll[j]){
             var Object = Objects[j]
             var subPeriod = subPeriods[j]
+            var indx = j
         }
     } 
        
@@ -128,6 +131,25 @@ for (let i = 0; i < coll.length; i++) {
             }
         }
     }
+    // 
+    if (this.id == "SkillDetail"){
+        // console.log(SkillsD[indx-10])
+        // Object.style.display = "none";
+        // subPeriod.style.display = "none";
+        for (let k = 0; k < SkillsD.length; k++) {
+            if (SkillsDegs[k].style.maxHeight > "0px") {
+                SkillsDegs[k].style.display = "none";
+                SkillsDegs[k].style.maxHeight = "0px";
+                SkillsDegs[k].style.overflow = "hidden";
+                this.textContent = '>'
+            } else {
+                SkillsDegs[k].style.display = "inline-block";
+                SkillsDegs[k].style.maxHeight = SkillsDegs[k].scrollHeight + "px";
+                SkillsDegs[k].style.overflow = "visible";
+                this.textContent = '-'
+            }
+        }
+    }
 
   });
 }
@@ -139,7 +161,7 @@ var ExpTxt = document.getElementById("ExpAllTxt")
 ExpTxt.textContent = "EXPAND ALL"
 for (let i = 0; i < ToggleBtn.length; i++) {
     ToggleBtn[i].addEventListener("click", function() {
-      this.classList.toggle("Expanded");
+    this.classList.toggle("Expanded");
       if (exp == 0){
         for (let j = 0; j < Objects.length; j++) {
             Objects[j].style.display = "block";
@@ -152,6 +174,11 @@ for (let i = 0; i < ToggleBtn.length; i++) {
             confCont[k].style.display = "flex";
             confCont[k].style.marginTop = "10px";
             confCont[k].style.maxHeight = confCont[k].scrollHeight + "px";
+        }
+        for (let k = 0; k < SkillsDegs.length; k++) {
+            SkillsDegs[k].style.display = "inline-block";
+            SkillsDegs[k].style.marginTop = "12px";
+            SkillsDegs[k].style.maxHeight = SkillsDegs[k].scrollHeight + "px";
         }
         ExpTxt.textContent = "COLLAPSE ALL"
         exp = 1;
@@ -168,6 +195,11 @@ for (let i = 0; i < ToggleBtn.length; i++) {
             confCont[k].style.display = "none";
             confCont[k].style.maxHeight = "0px";
             confCont[k].style.marginTop = "0px";
+        }
+        for (let k = 0; k < SkillsDegs.length; k++) {
+            SkillsDegs[k].style.display = "none";
+            SkillsDegs[k].style.maxHeight = "0px";
+            SkillsDegs[k].style.overflow = "hidden";
         }
         exp = 0;
         ExpTxt.textContent = "EXPAND ALL"

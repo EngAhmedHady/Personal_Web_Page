@@ -467,7 +467,7 @@ tr{
     justify-content: center;
     align-items: center; 
     width: 150px;
-    
+    caret-color: transparent;
 }
 
 #ExpAllTxt{
@@ -593,28 +593,33 @@ tr{
 .collapsible{
     cursor: pointer;
     margin-top: -2px;
+    caret-color: transparent;
 }
 
 .collapsible:hover{
     background-color: #009999;
     color: #fff;
     border-color: #000;
+    caret-color: transparent;
 }
 
 .collapsible:active{
     background-color: #F7444E;
+    caret-color: transparent;
 }
 
 .collapsible:after {
     /* content: '▶'; */
     /* content: '>'; */
     line-height: 13px; 
+    caret-color: transparent;
 }
   
 .active:after {
     /* content: "▼"; Unicode character for "minus" sign (-) */
     /* content: '-'; */
     line-height: 5px; 
+    caret-color: transparent;
 }
 
 .subPeriod{
@@ -942,6 +947,89 @@ tr{
     width: 50%;
 }
 
+#SkillsGroup {
+    position: relative;
+    width: 100%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    display: flex;
+    margin-top: 15px;
+}
+
+#SkillTitle{
+    position: relative;
+    float: right;
+    width: 50% ;
+    /* max-width: 500px; */
+    text-align: right;
+    padding-right: 10px;
+    font-family: BravaSlabRegular;
+}
+
+#SkillsUndertitle{
+    position: relative;
+    float: left;
+    width: 50% ;
+    /* --max-lines: 3;
+    max-height: calc(var(--lh) * var(--max-lines)); */
+    /* max-width: 500px; */
+    text-align: left;
+    padding-left: 10px;
+    font-size: 11pt;
+    color: gray;
+    top :-5px;
+}
+
+#SkillsSummary{
+    position: relative;
+    margin-top: 3px;
+    float: left;
+    font-family: BravaSlabRegular;
+    width: 100px;
+}
+
+.SkillsDegree{
+    position: relative;
+    /* float: left; */
+    width: calc(100% - 100px);
+    display:none;
+    margin: 0px;
+    /* to collapse */
+    /* height: 0px; 
+    display: flex;*/
+    overflow: hidden;
+    max-height:0px ;
+    transition: max-height 0.5s ease-out; 
+    /* ----------- */
+}
+
+.circle{
+    width: 12px;
+    height: 12px;
+    float: left;
+    position: relative;
+    margin-left: 15px;
+    margin-top: 6px;
+    border-spacing: 0px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    color: #fff;
+    /* vertical-align: text-top; */
+    line-height: 13px; 
+    /* text-align: center;  */
+    font-size: 9pt;
+}
+
+.Ok{
+    background-color: #009999;
+    -webkit-box-shadow:0px 0px 8px 3px rgba(45,255,196,0.47);
+    -moz-box-shadow: 0px 0px 8px 3px rgba(45,255,196,0.47);
+    box-shadow: 0px 0px 8px 3px rgba(45,255,196,0.47);
+}
+.No{
+    background-color: gray;
+}
+
 /* Use a media query to add a break point at 950px: */
 @media screen and (max-width: 1000px) {
     .linkedinPosts{
@@ -1151,7 +1239,14 @@ tr{
 
     .SMTit{
         width: 30%;
-    }    
+    } 
+    
+    .SkillsDegree{
+        float: left;
+        width: calc(100%);
+        display:block;
+    }
+    
 }
 
 
