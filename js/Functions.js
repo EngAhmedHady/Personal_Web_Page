@@ -84,8 +84,7 @@ var coll = document.getElementsByClassName("collapsible");
 var Objects = document.getElementsByClassName("Objects")
 var subPeriods = document.getElementsByClassName("subPeriod")
 var confCont = document.getElementsByClassName("ConferencesContent");
-var SkillsDegs = document.getElementsByClassName("SkillsDegree");
-var SkillsD = document.getElementsByClassName("skillD");
+var SkillsDetails = document.getElementsByClassName("SkillsUndertitle");
 // single Item Collapsible
 for (let i = 0; i < coll.length; i++) {coll[i].textContent = '>'}
 
@@ -96,7 +95,7 @@ for (let i = 0; i < coll.length; i++) {
         if (this == coll[j]){
             var Object = Objects[j]
             var subPeriod = subPeriods[j]
-            var indx = j
+            var colindx = j
         }
     } 
        
@@ -133,19 +132,23 @@ for (let i = 0; i < coll.length; i++) {
     }
     // 
     if (this.id == "SkillDetail"){
+        let skillsDegrees = SkillsDetails[colindx-10].querySelectorAll('.SkillsDegree');
+        let SkillsSummary = SkillsDetails[colindx-10].querySelectorAll('.SkillsSummary');
         // console.log(SkillsD[indx-10])
         // Object.style.display = "none";
         // subPeriod.style.display = "none";
-        for (let k = 0; k < SkillsD.length; k++) {
-            if (SkillsDegs[k].style.maxHeight > "0px") {
-                SkillsDegs[k].style.display = "none";
-                SkillsDegs[k].style.maxHeight = "0px";
-                SkillsDegs[k].style.overflow = "hidden";
+        for (let k = 0; k < skillsDegrees.length; k++) {
+            if (skillsDegrees[k].style.maxHeight > "0px") {
+                skillsDegrees[k].style.display = "none";
+                skillsDegrees[k].style.maxHeight = "0px";
+                skillsDegrees[k].style.overflow = "hidden";
+                SkillsSummary[k].style.width = "auto";
                 this.textContent = '>'
             } else {
-                SkillsDegs[k].style.display = "inline-block";
-                SkillsDegs[k].style.maxHeight = SkillsDegs[k].scrollHeight + "px";
-                SkillsDegs[k].style.overflow = "visible";
+                skillsDegrees[k].style.display = "inline-block";
+                skillsDegrees[k].style.maxHeight = skillsDegrees[k].scrollHeight + "px";
+                skillsDegrees[k].style.overflow = "visible";
+                SkillsSummary[k].style.width = "120px";
                 this.textContent = '-'
             }
         }
@@ -156,6 +159,8 @@ for (let i = 0; i < coll.length; i++) {
 
 // Collapsible all
 var ToggleBtn = document.getElementsByClassName("ToggleBtn");
+var SkillsDegs = document.getElementsByClassName("SkillsDegree");
+var SkillsSum = document.getElementsByClassName("SkillsSummary");
 var exp = 0;
 var ExpTxt = document.getElementById("ExpAllTxt")
 ExpTxt.textContent = "EXPAND ALL"
@@ -177,8 +182,8 @@ for (let i = 0; i < ToggleBtn.length; i++) {
         }
         for (let k = 0; k < SkillsDegs.length; k++) {
             SkillsDegs[k].style.display = "inline-block";
-            SkillsDegs[k].style.marginTop = "12px";
             SkillsDegs[k].style.maxHeight = SkillsDegs[k].scrollHeight + "px";
+            SkillsSum[k].style.width = "120px";
         }
         ExpTxt.textContent = "COLLAPSE ALL"
         exp = 1;
@@ -197,6 +202,7 @@ for (let i = 0; i < ToggleBtn.length; i++) {
             confCont[k].style.marginTop = "0px";
         }
         for (let k = 0; k < SkillsDegs.length; k++) {
+            SkillsSum[k].style.width = "auto";
             SkillsDegs[k].style.display = "none";
             SkillsDegs[k].style.maxHeight = "0px";
             SkillsDegs[k].style.overflow = "hidden";

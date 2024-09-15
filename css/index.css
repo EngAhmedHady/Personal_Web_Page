@@ -256,6 +256,7 @@ h3{
     transform: translate(-50%, 0);
     left: 49.75%;
     margin-top: 50px;
+    display: block;
 }
 
 .dividerDot{
@@ -441,6 +442,7 @@ tr{
     border: 2px solid #009999;
     background-color: #000;
     color: #fff;
+    font-family: BravaSlabBold;
     /* vertical-align: text-top; */
     line-height: 13px; 
     text-align: center; 
@@ -966,7 +968,7 @@ tr{
     font-family: BravaSlabRegular;
 }
 
-#SkillsUndertitle{
+.SkillsUndertitle{
     position: relative;
     float: left;
     width: 50% ;
@@ -980,18 +982,19 @@ tr{
     top :-5px;
 }
 
-#SkillsSummary{
+.SkillsSummary{
     position: relative;
     margin-top: 3px;
+    margin-right: 5px;
     float: left;
     font-family: BravaSlabRegular;
-    width: 100px;
+    /* width: 100px; */
 }
 
 .SkillsDegree{
     position: relative;
     /* float: left; */
-    width: calc(100% - 100px);
+    width: calc(100% - 125px);
     display:none;
     margin: 0px;
     /* to collapse */
@@ -1030,7 +1033,16 @@ tr{
     background-color: gray;
 }
 
-/* Use a media query to add a break point at 950px: */
+.OtherSkills{
+    position: relative;
+    margin-top: 3px;
+    margin-right: 5px;
+    float: left;
+    font-family: BravaSlabRegular;
+    font-size: 10pt;
+    display: flex;
+}
+/* Use a media query to add a break point at 1000px: */
 @media screen and (max-width: 1000px) {
     .linkedinPosts{
         height:600px;
@@ -1128,8 +1140,18 @@ tr{
     }
     
     .divider{
-        display: flex ;
+        display: flex;
+        /* position: relative; */
         margin-top: 10px;
+        /* margin-bottom: 10px; */
+    }
+
+    .circle{
+        margin-left: calc(20% - 20px);
+    }
+
+    #SkillTitle{
+        margin-top: -7px;
     }
 
     #fname{
@@ -1247,12 +1269,26 @@ tr{
         display:block;
     }
     
+    .circle{
+        margin-left: calc(20% - 20px);
+        height: 8px;
+        width: 8px;
+    }
+    
+    .SkillsUndertitle{
+        padding-left: 5px;
+        font-size: 9pt;
+    }
+    
+    .OtherSkills{
+        font-size: 8pt;
+    }
 }
 
 
-/* Use a media query to add a break point at 950px: */
+/* Use a media query to add a break point at 365px: */
 @media screen and (max-width: 365px) {
     .SMTit{
         width: 33%;
-    }    
+    }  
 }
