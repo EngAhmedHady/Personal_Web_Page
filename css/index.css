@@ -53,16 +53,30 @@ body{
     background-size: cover; */
     margin: 0px;
     padding: 0px;
-    width: 100vw;
+    width: 100%;
 }
 
 .FullBody{
     float: center;
-    width: 95%;
+    width: 100%;
     height: max-content;
     position: absolute;
     transform: translate(-50%, 0);
     left: 52%;
+}
+
+.Content{
+    box-sizing: border-box;
+    float: left;
+    flex: 1;
+    width: 80%;
+    min-width: 250px;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 0px 20px 0 rgba(0,0,0,0.19); */
+    padding: 20px;
 }
 
 /* Global values*/
@@ -145,63 +159,7 @@ h3{
     float: left;
     width: 100%;
     box-shadow: 0 -8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
 
-.Content{
-    box-sizing: border-box;
-    float: left;
-    flex: 1;
-    width: 80%;
-    background-color: white;
-    text-align: center;
-    position: relative;
-    z-index: -1;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 0px 20px 0 rgba(0,0,0,0.19);
-    padding: 20px;
-}
-
-#Profile{
-    margin: 0px 25px 25px 0px;
-    max-width: 850px;
-    position: relative;
-    transform: translate(-50%, 0);
-    left: 50%;
-    text-align: center;
-    font-family: BravaSlablight;
-}
-
-.DownloadCV{
-    width: 185px;
-    height: 35px;
-    text-align: center;
-    background-color: #fff;
-    font-family: BravaSlabSemiBold;
-    color: #002c3e;
-    border: 1px solid #002c3e;
-    border-radius: 5px;
-    transition-duration: 0.5s;
-    padding: 5px;
-    box-sizing: content-box;
-}
-
-.DownloadCV:hover{
-    background-color: #78bcc4;
-    color: #fff;
-    padding-right: 25px;
-}
-
-.DownloadCV:after {
-    background-color: #f7444e;
-    color: #fff;
-    padding-right: 0px;
-    transition: all 0.8s
-}
-  
-.DownloadCV:active {
-    background-color: #f7444e;
-    color: #fff;
-    padding-right: 0px;
-    transition: all 0.8s
 }
 
 .SocialMedia{
@@ -268,17 +226,6 @@ h3{
     border-radius: 10px;
 }
 
-#A{
-    background-color: #000;
-    margin-bottom: 10px;
-}
-
-#B{
-    background-color: #009999;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 table{
     position: relative;
     transform: translate(-50%, 0);
@@ -294,545 +241,6 @@ tr{
     vertical-align: top;
 }
 
-#info{
-    width: 50%;
-    text-align: left;
-    padding: 5px 5px;
-    font-family: BravaSlablight;
-    border-left: 1px solid #b3b3b3;
-}
-
-.linkedinPosts{
-    max-height:700px;
-    width:60%;
-}
-
-#infoTitle{
-    width: 50%;
-    text-align: right;
-    font-family: BravaSlabRegular;
-    padding: 5px 5px;
-}
-
-/* Resume */
-.HeaderItems{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    padding: 0px;
-}
-
-.CVlist{
-    list-style: none;
-    margin: 5px;
-    padding: 3px 5px;
-    background-color: #fff;
-    color: #002c3e;
-    border: 1px solid #002c3e;
-    border-radius: 5px;
-    transition-duration: 0.5s;
-    cursor: pointer;
-    font-size: 12pt;
-    font-family: BravaSlabBold;
-    /* font-weight: bold; */
-}
-
-.CVlist:hover{
-    background-color: #78bcc4;
-    color: #fff;
-    padding-right: 3px;
-}
-
-.CVlist.activated{
-    background-color: #f7444e;
-    color: #fff;
-    padding-right: 3px;
-    transition: all 0.8s
-}
-
-.CVData.hide{
-    display: none;
-    overflow: hidden;
-    height: 0px;
-}
-
-.CVData.active:before,.CVData.active:after {
-    content:'';
-    display: none;
-}
-
-#expMainInfo{
-    display: flex;
-    position: relative;
-    float: right;
-    width: 50% ;
-}
-
-#Experience{
-    position: relative;
-    width: 100%;
-    transform: translate(-50%, 0);
-    left: 50%;
-    display: flex;
-    margin-top: 15px;
-}
-
-#ExpTitles{
-    position: relative;
-    float: right;
-    width: 100% ;
-    /* max-width: 500px; */
-    text-align: right;
-    padding-right: 10px;
-    font-family: BravaSlabRegular;
-}
-
-.workingPeriod{
-    font-family: BravaSlabExtraLight;
-    font-weight: bold;
-    font-size: 12pt;
-    margin: -2px 0px;
-    color: #F7444E;
-}
-
-.Date{
-    display: inline-block;
-}
-
-#est{
-    font-weight: normal;
-    font-size: 11pt;
-    color: #000;
-}
-
-#present {
-    width: 65px;
-    clip-path: polygon(11% 5%, 97% 5%, 100% 11%, 100% 89%, 97% 95%, 11% 95%, 8% 89%, 8% 70%, 0% 50%, 8% 30%, 8% 11%);
-    background-color: #009999;
-    color: #fff;
-    text-align: right;
-    padding-right: 4px;
-}
-
-#CompanyLink{
-    color: #002C3E;
-}
-
-#Jobtitle{
-    margin-top: 10px;
-}
-
-#WorkAddress, #ConfAdress{
-    margin: 0;
-    /* margin-bottom: 20px; */
-    font-family: BravaSlabSemiBold;
-    color: #000;
-}
-/* ----------------------------------------- */
-
-.Event{
-    width: 15px;
-    height: 15px;
-    position: relative;
-    margin: 0px;
-    border-spacing: 0px;
-    border-radius: 15px;
-    border: 2px solid #009999;
-    background-color: #000;
-    color: #fff;
-    font-family: BravaSlabBold;
-    /* vertical-align: text-top; */
-    line-height: 13px; 
-    text-align: center; 
-    font-size: 9pt;
-}
-
-.ToggleBtn{
-    width: 20px;
-    height: 20px;
-    margin: 0px;
-    border-radius: 20px;
-    border: 3px solid #009999;
-    background-color: #000;
-    cursor: pointer;
-    line-height: 16px;
-    font-family: BravaSlabBold;
-    font-size: 14pt;
-    text-align: center;
-    color: #fff;
-}
-
-.ExpAll{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center; 
-    width: 150px;
-    caret-color: transparent;
-}
-
-#ExpAllTxt{
-    margin-right:5px; 
-    margin-top: 2px; 
-    font-family: BravaSlabBold;
-}
-
-
-.ToggleBtn:hover{
-    background-color: #009999;
-    color: #fff;
-    border-color: #000;
-}
-
-.ToggleBtn:active{
-    background-color: #F7444E;
-}
-
-.ToggleBtn:after {
-    /* content: '▶'; */
-    content: '>';
-    line-height: 13px; 
-}
-  
-.ToggleBtn.Expanded:after {
-    /* content: "▼"; Unicode character for "minus" sign (-) */
-    content: '-';
-    line-height: 20px; 
-}
-
-
-.subEventPoint{
-    width: 13px;
-    height: 13px;
-    position: relative;
-    top: -2px;
-    border-spacing: 0px;
-    border-radius: 15px;
-    border: 4px solid #fff;
-    background-color: rgb(140, 140, 140, 0.5);
-}
-
-#EventLine{
-    position: relative;
-    margin: 0px;
-    transform: translate(50%, 5px);
-    left: -7%;
-    height: calc(100% - 20px);
-    border-left: 1px solid rgb(140, 140, 140, 0.5);
-}
-
-/* ----------------------------------------- */
-#ExpDetails{
-    position: relative;
-    float: left;
-    width: 50% ;
-    --max-lines: 3;
-    max-height: calc(var(--lh) * var(--max-lines));
-    /* max-width: 500px; */
-    text-align: left;
-    padding-left: 10px;
-    font-family: BravaSlabRegular;
-    font-size: 11pt;
-    color: gray;
-    top :-5px;
-}
-
-/* ========================================== */
-#subDetails{
-    position: relative;
-    display:flex;
-    width: 100%;
-    /* height: max-content; */
-    margin: 0px;
-    margin-top: 10px;
-    float: left;
-}
-
-#ConfDetails{
-    position: relative;
-    display:flex;
-    width: 100%;
-    /* height: max-content; */
-    margin: 0px;
-    float: left;
-}
-
-.description{
-    margin: 0px;
-}
-/* -----------------------------------------*/
-#SubEvent{
-    width: 15px;
-    /* height: 100%; */
-    margin: 0px;
-    position: relative;
-    display:inline-block;
-}
-
-#subEventLine{
-    position: relative;
-    margin: 0px;
-    width: 10px;
-    transform: translate(50%, 5px);
-    left: 20%;
-    height: calc(100% - 20px);
-    border-left: 1px solid rgb(140, 140, 140, 0.5);    
-}
-
-#ConfLine{
-    position: relative;
-    margin: 0px;
-    width: 10px;
-    transform: translate(50%, 5px);
-    left:28%;
-    top: -7px;
-    height: 100%;
-    /* height: calc(100% - 5px); */
-    border-left: 1px solid rgb(140, 140, 140, 0.5);
-}
-/* -----------------------------------------*/
-.collapsible{
-    cursor: pointer;
-    margin-top: -2px;
-    caret-color: transparent;
-}
-
-.collapsible:hover{
-    background-color: #009999;
-    color: #fff;
-    border-color: #000;
-    caret-color: transparent;
-}
-
-.collapsible:active{
-    background-color: #F7444E;
-    caret-color: transparent;
-}
-
-.collapsible:after {
-    /* content: '▶'; */
-    /* content: '>'; */
-    line-height: 13px; 
-    caret-color: transparent;
-}
-  
-.active:after {
-    /* content: "▼"; Unicode character for "minus" sign (-) */
-    /* content: '-'; */
-    line-height: 5px; 
-    caret-color: transparent;
-}
-
-.subPeriod{
-    font-family: BravaSlabExtraLight;
-    font-size: 12pt;
-    color: #F7444E;
-    padding-left: 15px;
-    margin: 0px;
-    position: relative;
-    display:inline-block;
-    font-weight: bold;
-    /* to collapse */
-    /* height: 0px; */
-    display: none;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-    /* ----------- */
-    width: calc(100% - 30px);
-    top: -4px;
-}
-
-.ConfDate{
-    font-family: BravaSlabExtraLight;
-    font-size: 12pt;
-    color: #F7444E;
-    padding-left: 15px;
-    margin: 0px;
-    position: relative;
-    display:inline-block;
-    font-weight: bold;
-    width: calc(100% - 30px);
-    top: -4px;
-}
-
-
-#subEventDetails{
-    position: relative;
-    width: calc(100% - 20px);
-    margin-top: 0px;
-}
-
-.ConferencesContent{
-    margin: 0px;
-    /* to collapse */
-    /* height: 0px; */
-    display: flex;
-    overflow: hidden;
-    max-height:0px ;
-    transition: max-height 0.2s ease-out;
-    /* ----------- */
-}
-
-#TitleOfSubDetails{
-    display:inline-flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#SubDetailsTitle{
-    position: relative;
-    float: left;
-    text-align: left;
-    padding-left: 10px;
-    font-family: BravaSlabRegular;
-    font-size: 11pt;
-    color: gray;
-    top :-5px;
-    margin: 0px;
-    margin-left: 5px;
-    /* width: 75%; */
-    float: left;
-    width: 100%;
-}
-
-/* #Space{
-    width: 5%;
-} */
-
-#Space{
-    width: 0%;
-}
-
-/* #seeMore{
-    width: 20%;
-    position: relative;
-    float: right;
-} */
-
-#ConfAdress{
-    position: relative;
-    float: left;
-    width: 100%;
-    margin-bottom: 15px;
-    /* margin: 0px; */
-    margin-left: 7px;
-    top :-5px;
-    padding-left: 8px;
-}
-
-.ConferenceEvent{
-    position:relative;
-    left: -28px;
-}
-
-#TalkTitle{
-    position: relative;
-    float: left;
-    width: 100%;
-    margin: 0px;
-    font-family: BravaSlablight;
-    margin-left: 7px;
-    top :-5px;
-    font-size: 12pt;
-    padding-left: 7px;
-    color: #002C3E;
-    font-style: italic
-}
-
-#jobSummary{
-    margin-top: 0;
-    margin-bottom: 0px;
-}
-
-#SubTitleEx{
-    font-size: 11pt;
-    text-decoration: underline;
-    margin-bottom: 1px;
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-left: 0px;
-}
-
-.Objects{
-    margin-top: 0px;
-    /* margin-bottom: 3px; */
-    /* to collapse */
-    /* height: 0px; */
-    display: none;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-    /* ----------- */
-}
-
-#CompanyLogo{
-    position: relative;
-    float: right;
-    width: 20% ;
-    max-width: 80px;
-    min-width: 50px;
-    padding-right: 10px;
-}
-
-#Complogo{
-    position: relative;
-    width: 100% ;
-    max-width: 80px;
-    top: 55px;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-#mid{
-    width: 4%;
-    max-width: 20px;
-    padding: 0px;
-    vertical-align: top;
-}
-
-.vl {
-    border-left:1px solid #b3b3b3;
-    padding: 0px;
-    margin: 0px;
-    position: relative;
-    left: 50%;
-}
-
-#UniLogo{
-    width: 65px;
-}
-
-.Bar{
-    width: 200px; 
-    height: 10px;
-    background-color: #b3b3b3;
-    border:2px solid #b3b3b3; 
-}
-
-.Degree{
-    -moz-animation: Load 2s ease-out;
-    -webkit-animation: Load 2s ease-out;
-    animation: Load 2s ease-out;
-    height: 100%;
-    background-color: #009999;
-}
-
-.Ticks {
-    color: orange;
-}
-
-#Skill{
-    font-family: BravaSlabRegular;
-    padding-right: 10px;
-}
-
-#RatedSkills{
-    border-right: 1px solid rgb(140, 140, 140, 0.5);
-    width: 50%;
-}
 
 #Conatactme{
     margin-bottom: 30px;
@@ -949,210 +357,8 @@ tr{
     width: 50%;
 }
 
-#SkillsGroup {
-    position: relative;
-    width: 100%;
-    transform: translate(-50%, 0);
-    left: 50%;
-    display: flex;
-    margin-top: 15px;
-}
-
-#SkillTitle{
-    position: relative;
-    float: right;
-    width: 50% ;
-    /* max-width: 500px; */
-    text-align: right;
-    padding-right: 10px;
-    font-family: BravaSlabRegular;
-}
-
-.SkillsUndertitle{
-    position: relative;
-    float: left;
-    width: 50% ;
-    /* --max-lines: 3;
-    max-height: calc(var(--lh) * var(--max-lines)); */
-    /* max-width: 500px; */
-    text-align: left;
-    padding-left: 10px;
-    font-size: 11pt;
-    color: gray;
-    top :-5px;
-}
-
-.SkillsSummary{
-    position: relative;
-    margin-top: 3px;
-    margin-right: 5px;
-    float: left;
-    font-family: BravaSlabRegular;
-    /* width: 100px; */
-}
-
-.SkillsDegree{
-    position: relative;
-    /* float: left; */
-    width: calc(100% - 125px);
-    display:none;
-    margin: 0px;
-    /* to collapse */
-    /* height: 0px; 
-    display: flex;*/
-    overflow: hidden;
-    max-height:0px ;
-    transition: max-height 0.5s ease-out; 
-    /* ----------- */
-}
-
-.circle{
-    width: 12px;
-    height: 12px;
-    float: left;
-    position: relative;
-    margin-left: 15px;
-    margin-top: 6px;
-    border-spacing: 0px;
-    border-radius: 12px;
-    border: 1px solid #000;
-    color: #fff;
-    /* vertical-align: text-top; */
-    line-height: 13px; 
-    /* text-align: center;  */
-    font-size: 9pt;
-}
-
-.Ok{
-    background-color: #009999;
-    -webkit-box-shadow:0px 0px 8px 3px rgba(45,255,196,0.47);
-    -moz-box-shadow: 0px 0px 8px 3px rgba(45,255,196,0.47);
-    box-shadow: 0px 0px 8px 3px rgba(45,255,196,0.47);
-}
-.No{
-    background-color: gray;
-}
-
-.OtherSkills{
-    position: relative;
-    margin-top: 3px;
-    margin-right: 5px;
-    float: left;
-    font-family: BravaSlabRegular;
-    font-size: 10pt;
-    display: flex;
-}
 /* Use a media query to add a break point at 1000px: */
 @media screen and (max-width: 1000px) {
-    .linkedinPosts{
-        height:600px;
-        width:90%
-    }
-
-    .workExperince{
-        display: block;
-        position: relative;
-        float: left;
-    }
-
-    .education{
-        display: block;
-        position: relative;
-        float: left;
-    }
-
-    #CompanyLogo{
-        position: relative;
-        float: left;
-        width: 15% ;
-        max-width: 50px;
-        padding-right: 5px;
-        margin-left: 0px;
-        top: -10px;
-    } 
-
-    #workingPeriod,#subPeriod{
-        font-family: BravaSlabExtraLight;
-        font-size: 9pt;
-        margin: 0px 0px;
-    }
-
-
-    #Experience{
-        display: block;
-        margin-top: 25px;
-    }
-    
-    #expMainInfo{
-        width: 100% ;
-    } 
-    
-    #ExpTitles{
-        width: 75% ;
-        text-align: left;
-        font-size: 10pt;
-        padding-left: 5px;
-    }
-
-    .Event{
-        width: 0;
-        height: 0;
-        border-spacing: 0;
-        border-radius: 0;
-        border: 0;
-        /* z-index: -1; */
-    }
-
-    .collapsible{
-        width: 15px;
-        height: 15px;
-        border-spacing: 0;
-        border-radius: 15px;
-        border: 2px solid #009999;
-        cursor: pointer;
-        margin-top: -5px;
-    }
-
-    .EventLine, #subEventLine #ConfLine{
-        width: 0;
-        height: 0;
-    }
-    
-    #ExpDetails{
-        width: 100%;
-        padding-left: 5px;
-        font-size: 9pt;
-        top: 2px;
-        /* margin-bottom: px; */
-    }
-
-    #SubTitleEx, #SubDetailsTitle,#TalkTitle{
-        font-size: 9pt;
-    }
-
-    #info{
-        border-left: 0px solid #b3b3b3;
-    }
-
-    .dividerDot{
-        width: 0;
-        height: 0;
-    }
-    
-    .divider{
-        display: flex;
-        /* position: relative; */
-        margin-top: 10px;
-        /* margin-bottom: 10px; */
-    }
-
-    .circle{
-        margin-left: calc(20% - 20px);
-    }
-
-    #SkillTitle{
-        margin-top: -7px;
-    }
 
     #fname{
         position: relative;
@@ -1192,6 +398,7 @@ tr{
     .TabTitle{
         width: 90%;
         max-width: 90%;
+        min-width: 250px;
         float: center;
         margin: 0 5% 0 5%;
     }
@@ -1218,11 +425,13 @@ tr{
     
     #MyImage{
       float: center;
-      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      width: 100%; 
+      min-width: 250px;
+      /* The width is 100%, when the viewport is 800px or smaller */
     }
 
     .Content{
-        margin: 0 5% 0% 5%;
+        margin: 0% 5% 0% 5%;
         width: 90%;
         float: center;
     }
@@ -1244,8 +453,10 @@ tr{
         margin: 0% 5% 0% 5%;;
         width: 90%;
         max-width:90%;
+        min-width: 250px;
         height: 50px;
     }
+
     .SM{
         width: 40px;
         float: left;
@@ -1262,27 +473,6 @@ tr{
     .SMTit{
         width: 30%;
     } 
-    
-    .SkillsDegree{
-        float: left;
-        width: calc(100%);
-        display:block;
-    }
-    
-    .circle{
-        margin-left: calc(20% - 20px);
-        height: 8px;
-        width: 8px;
-    }
-    
-    .SkillsUndertitle{
-        padding-left: 5px;
-        font-size: 9pt;
-    }
-    
-    .OtherSkills{
-        font-size: 8pt;
-    }
 }
 
 

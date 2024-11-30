@@ -1,0 +1,139 @@
+@media screen and (max-width: 1000px) {
+    .workExperince{
+        display: block;
+        position: relative;
+        float: left;
+    }
+
+    .education{
+        display: block;
+        position: relative;
+        float: left;
+    }
+
+    #CompanyLogo{
+        position: relative;
+        float: left;
+        width: 15% ;
+        max-width: 50px;
+        padding-right: 5px;
+        margin-left: 0px;
+        top: -10px;
+    } 
+
+    #workingPeriod,#subPeriod{
+        font-family: BravaSlabExtraLight;
+        font-size: 9pt;
+        margin: 0px 0px;
+    }
+
+
+    #Experience{
+        display: block;
+        margin-top: 25px;
+    }
+    
+    #expMainInfo{
+        width: 100% ;
+    } 
+    
+    #ExpTitles{
+        width: 75% ;
+        text-align: left;
+        font-size: 10pt;
+        padding-left: 5px;
+    }
+
+    .Event{
+        width: 0;
+        height: 0;
+        border-spacing: 0;
+        border-radius: 0;
+        border: 0;
+        /* z-index: -1; */
+    }
+
+    .collapsible{
+        width: 15px;
+        height: 15px;
+        border-spacing: 0;
+        border-radius: 15px;
+        border: 2px solid #009999;
+        cursor: pointer;
+        margin-top: -5px;
+    }
+
+    .EventLine, #subEventLine #ConfLine{
+        width: 0;
+        height: 0;
+    }
+    
+    #ExpDetails{
+        width: 100%;
+        padding-left: 5px;
+        font-size: 9pt;
+        top: 2px;
+        /* margin-bottom: px; */
+    }
+
+    #SubTitleEx, #SubDetailsTitle,#TalkTitle{
+        font-size: 9pt;
+    }
+
+    #info{
+        border-left: 0px solid #b3b3b3;
+    }
+
+    .dividerDot{
+        width: 0;
+        height: 0;
+    }
+    
+    .divider{
+        display: flex;
+        /* position: relative; */
+        margin-top: 10px;
+        /* margin-bottom: 10px; */
+    }
+
+    .circle{
+        margin-left: calc(20% - 20px);
+    }
+
+    #SkillTitle{
+        margin-top: -7px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    #SkillTitle{
+        font-size: 10pt;
+    }
+    
+    .SkillsDegree{
+        float: left;
+        /* width: calc(100%); */
+        width: 100%;
+        display:block;
+    }
+    
+    .circle{
+        /* margin-left: calc(20% - 20px); */
+        height: 8px;
+        width: 8px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    
+    .SkillsUndertitle{
+        padding-left: 5px;
+        font-size: 9pt;
+        min-width: 120px;
+    }
+    
+    .OtherSkills{
+        font-size: 8pt;
+    }
+
+}
