@@ -27,7 +27,6 @@
         margin: 0px 0px;
     }
 
-
     #Experience{
         display: block;
         margin-top: 25px;
@@ -116,6 +115,7 @@
         /* width: calc(100%); */
         width: 100%;
         display:block;
+        transition: max-height 0.8s ease-out;
     }
     
     .circle{
@@ -136,4 +136,34 @@
         font-size: 8pt;
     }
 
+    .activity{
+        display: inline-block;
+    }
+
+    .ActivTitle{
+        padding-top: 10px;
+    }    
+
+    .Activ-details{
+        width: 100%;
+    }
+
+    .Img-container{
+        width: 100%;
+        /* max-width: 300px; */
+    }
+
+    .ActivImg{
+        border-radius: 7.5px 7.5px 0px 0px;
+    }
+
+    .ActivImg-txt{
+        border-radius: 0px;
+    }
+
+    .ActivImgBtn{
+        position: absolute;
+        top: calc(50% - 160px);
+        transform: translateY(-50%);
+    }
 }

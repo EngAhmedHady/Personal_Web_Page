@@ -210,3 +210,127 @@
 //     };
 //     request.send();
 // }
+
+// function skillsFile(FilePath){   
+//     var request = new XMLHttpRequest();
+//     request.open('GET', FilePath, true);
+//     request.responseType = 'blob';
+//     request.onload = function() {
+//         var reader = new FileReader();
+//         reader.readAsText(request.response); // -------------------------------------- Read file as string
+//         // ************** Load event **************
+//         reader.onload = function(event) {
+//             var csvdata = event.target.result; // ---------------------------------------------------- Read file data
+//             var rowData = csvdata.split('\n'); // ---------------------------------------------------- Split by line break to gets rows Array
+//             var SkillsData  = document.createElement("div");
+//             // Loop on the row Array (change row=0 if you also want to read 1st row)
+//             for (var row = 0; row < rowData.length; row++) {
+//                 rowColData = rowData[row].split(','); // ------------------------------------------- Split by comma (,) to get column Array
+//                 if (rowColData[0] != 'Other'){
+//                     var SkillData  = document.createElement("div");
+//                     // let NewSkill = document.createElement("span"); 
+//                     SkillData.classList.add("Skill");
+//                     SkillData.textContent = "Hello " + row;
+//                     // SkillData.appendChild(NewSkill);
+
+//                     console.log(rowColData[1], parseInt(rowColData[2],10))
+//                     // for (let star = 0; star < 5; star++){
+//                     //     let NewStar = document.createElement("span");
+//                     //     NewStar.classList.add("fa");
+//                     //     NewStar.classList.add("fa-star");
+//                     //     console.log(parseInt(rowColData[2],10))
+//                     //     if (star < parseInt(rowColData[2],10)) NewStar.classList.add("Ticks");
+//                     //     SkillData.appendChild(NewStar);
+//                     // }
+                    
+//                 }
+//                 else {
+                    
+//                 }
+//                 SkillsData.appendChild(SkillData);
+//                 document.getElementById("RatedSkills").appendChild(SkillsData)
+//                 RatedSkills.innerHTML = rowColData[1];
+//             }
+            
+//         }
+//     };
+//     request.send();
+// }
+
+// function findHeights(TableId,Data,vl2H,n) {
+//     var tblsize = document.getElementById(TableId).rows.length;
+
+//     for (var i = 1; i <= tblsize; i++) {
+//         var tbl = document.getElementById(Data+i);
+//         var vlH = document.getElementById(vl2H+i);
+//         if (i == 2 && n == 1) var tblH = tbl.offsetHeight + 20;
+//         else tblH = tbl.offsetHeight - 15;
+//         vlH.style.height = tblH + 'px';
+//     }
+// }
+
+
+                // Loop on the row column Array
+                // for (var col = 0; col < rowColData.length; col++) {
+                //     var newCell = newRow.insertCell(); // ----------------------------------------- Insert a cell at the end of the row
+                //     if (col == 0) newCell.id = "infoTitle";
+                //     else newCell.id = "info";
+                //     newCell.innerHTML = rowColData[col];
+                // }
+                
+                       
+            // if (rowColData[0] != 'Other'){
+            //     let newCell = newRow.insertCell();
+            //     let Skill =  document.createElement("div");
+            //     newCell.id = "RatedSkills";
+            //     let Category = document.createElement("span"); 
+            //     Category.classList.add("Skill");
+            //     Category.textContent = rowColData[1];
+            //     console.log( rowColData[1], parseInt(rowColData[2],10))
+            //     Skill.appendChild(Category);
+            //     for (let star = 0; star < 5; star++){
+            //         let Star = document.createElement("span");
+            //         Star.classList.add("fa");
+            //         Star.classList.add("fa-star");
+            //         console.log(parseInt(rowColData[2],10))
+            //         if (star < parseInt(rowColData[2],10)) Star.classList.add("Ticks");
+            //         Skill.appendChild(Star);
+            //     }
+            //     newCell.appendChild(Skill);
+            // }
+            // else {
+                
+            // }
+
+            // SkillsContainer.firstElementChild.remove();
+
+            // var SkillsContainer = document.getElementById(SectionId) 
+            // console.log('DataURL:', event.target.result);
+            // Loop on the row Array (change row=0 if you also want to read 1st row)
+
+            // for (var row = 0; row < rowData.length; row++) {
+            //     let rowColData = rowData[row].split(',');
+            //     if (rowColData[0] in skills){
+            //         let keydata = rowColData[1]
+            //         let Valuedata = Number(rowColData[2])
+            //         let skill = {}
+            //         skill[keydata] = Valuedata; 
+            //         skills[rowColData[0]].push(skill)
+            //     }
+            //     else {
+            //         skills[rowColData[0]] = [];
+            //         let keydata = rowColData[1]
+            //         let Valuedata = Number(rowColData[2])
+            //         let skill = {}
+            //         skill[keydata] = Valuedata; 
+            //         skills[rowColData[0]].push(skill)
+            //     }
+            // }
+            // console.log(skills)
+            // for (var row = 0; row < skills.length; row++){
+            //     let Category = document.createElement("div"); 
+            //     Category.id = skills;
+            //     TalkTitle.textContent = Nextres[2];
+            //     subEventDetails.appendChild(TalkTitle);
+                
+            // }

@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
     readCSVFile("Documents/ContactInfo.csv", 'tblcsvdata');
   });
 
-
-document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {
     skillsFile("Documents/Skills.csv");
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     readtxtFile("Documents/Profile.txt", 'Profile');
@@ -239,6 +239,7 @@ function showPanel(PanelIndex, ColorCode)
     tabButton[PanelIndex].style.boxShadow = "none";    
     tabPanels[PanelIndex].style.display = "block";
     tabPanels[PanelIndex].style.backgroundColor = ColorCode;
+    adjustButtonPosition(1)
 }
 
 function PanelIndexPass(Index)
@@ -247,17 +248,6 @@ function PanelIndexPass(Index)
     sessionStorage.setItem("PIndex", PIndex);
 }
 
-// function findHeights(TableId,Data,vl2H,n) {
-//     var tblsize = document.getElementById(TableId).rows.length;
-
-//     for (var i = 1; i <= tblsize; i++) {
-//         var tbl = document.getElementById(Data+i);
-//         var vlH = document.getElementById(vl2H+i);
-//         if (i == 2 && n == 1) var tblH = tbl.offsetHeight + 20;
-//         else tblH = tbl.offsetHeight - 15;
-//         vlH.style.height = tblH + 'px';
-//     }
-// }
 
 function readCSVFile(FilePath, TableId){    
     var request = new XMLHttpRequest();
@@ -311,52 +301,6 @@ function readtxtFile(FilePath, ParagraphId){
     request.send();
 }
 
-// function skillsFile(FilePath){   
-//     var request = new XMLHttpRequest();
-//     request.open('GET', FilePath, true);
-//     request.responseType = 'blob';
-//     request.onload = function() {
-//         var reader = new FileReader();
-//         reader.readAsText(request.response); // -------------------------------------- Read file as string
-//         // ************** Load event **************
-//         reader.onload = function(event) {
-//             var csvdata = event.target.result; // ---------------------------------------------------- Read file data
-//             var rowData = csvdata.split('\n'); // ---------------------------------------------------- Split by line break to gets rows Array
-//             var SkillsData  = document.createElement("div");
-//             // Loop on the row Array (change row=0 if you also want to read 1st row)
-//             for (var row = 0; row < rowData.length; row++) {
-//                 rowColData = rowData[row].split(','); // ------------------------------------------- Split by comma (,) to get column Array
-//                 if (rowColData[0] != 'Other'){
-//                     var SkillData  = document.createElement("div");
-//                     // let NewSkill = document.createElement("span"); 
-//                     SkillData.classList.add("Skill");
-//                     SkillData.textContent = "Hello " + row;
-//                     // SkillData.appendChild(NewSkill);
-
-//                     console.log(rowColData[1], parseInt(rowColData[2],10))
-//                     // for (let star = 0; star < 5; star++){
-//                     //     let NewStar = document.createElement("span");
-//                     //     NewStar.classList.add("fa");
-//                     //     NewStar.classList.add("fa-star");
-//                     //     console.log(parseInt(rowColData[2],10))
-//                     //     if (star < parseInt(rowColData[2],10)) NewStar.classList.add("Ticks");
-//                     //     SkillData.appendChild(NewStar);
-//                     // }
-                    
-//                 }
-//                 else {
-                    
-//                 }
-//                 SkillsData.appendChild(SkillData);
-//                 document.getElementById("RatedSkills").appendChild(SkillsData)
-//                 RatedSkills.innerHTML = rowColData[1];
-//             }
-            
-//         }
-//     };
-//     request.send();
-// }
-
 function myNewFunction(sel) {
     if (sel.options[sel.selectedIndex].value == 'Aero') {window.open("Documents/Ahmed_Hanfy_Resume.pdf");}
     else if (sel.options[sel.selectedIndex].value == 'Mech') {window.open("Documents/Resume_Ahmed_Hanfy.pdf");}
@@ -365,69 +309,65 @@ function myNewFunction(sel) {
 }
 
 
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
+
+// function currentDiv(n) {
+//   showDivs(slideIndex = n);
+// }
+
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("mySlides");
+//   var dots = document.getElementsByClassName("demo");
+//   if (n > x.length) {slideIndex = 1}    
+//   if (n < 1) {slideIndex = x.length}
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" w3-red", "");
+//   }
+//   x[slideIndex-1].style.display = "block";  
+//   dots[slideIndex-1].className += " w3-red";
+// }
 
 
-                // Loop on the row column Array
-                // for (var col = 0; col < rowColData.length; col++) {
-                //     var newCell = newRow.insertCell(); // ----------------------------------------- Insert a cell at the end of the row
-                //     if (col == 0) newCell.id = "infoTitle";
-                //     else newCell.id = "info";
-                //     newCell.innerHTML = rowColData[col];
-                // }
-                
-                       
-            // if (rowColData[0] != 'Other'){
-            //     let newCell = newRow.insertCell();
-            //     let Skill =  document.createElement("div");
-            //     newCell.id = "RatedSkills";
-            //     let Category = document.createElement("span"); 
-            //     Category.classList.add("Skill");
-            //     Category.textContent = rowColData[1];
-            //     console.log( rowColData[1], parseInt(rowColData[2],10))
-            //     Skill.appendChild(Category);
-            //     for (let star = 0; star < 5; star++){
-            //         let Star = document.createElement("span");
-            //         Star.classList.add("fa");
-            //         Star.classList.add("fa-star");
-            //         console.log(parseInt(rowColData[2],10))
-            //         if (star < parseInt(rowColData[2],10)) Star.classList.add("Ticks");
-            //         Skill.appendChild(Star);
-            //     }
-            //     newCell.appendChild(Skill);
-            // }
-            // else {
-                
-            // }
+var ActivIndex = 1;
+ActivImgShow(ActivIndex);
 
-            // SkillsContainer.firstElementChild.remove();
+function AddImg(n) {
+    ActivImgShow(ActivIndex += n);
+}
 
-            // var SkillsContainer = document.getElementById(SectionId) 
-            // console.log('DataURL:', event.target.result);
-            // Loop on the row Array (change row=0 if you also want to read 1st row)
+function ActivImgShow(n) {
+  var i;
+  var x = document.getElementsByClassName("Activ-imgs");
+  if (n > x.length) {ActivIndex = 1}
+  if (n < 1) {ActivIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[ActivIndex-1].style.display = "block";
+  x[ActivIndex-1].style.height = "100%";
+  return ActivIndex
+}
 
-            // for (var row = 0; row < rowData.length; row++) {
-            //     let rowColData = rowData[row].split(',');
-            //     if (rowColData[0] in skills){
-            //         let keydata = rowColData[1]
-            //         let Valuedata = Number(rowColData[2])
-            //         let skill = {}
-            //         skill[keydata] = Valuedata; 
-            //         skills[rowColData[0]].push(skill)
-            //     }
-            //     else {
-            //         skills[rowColData[0]] = [];
-            //         let keydata = rowColData[1]
-            //         let Valuedata = Number(rowColData[2])
-            //         let skill = {}
-            //         skill[keydata] = Valuedata; 
-            //         skills[rowColData[0]].push(skill)
-            //     }
-            // }
-            // console.log(skills)
-            // for (var row = 0; row < skills.length; row++){
-            //     let Category = document.createElement("div"); 
-            //     Category.id = skills;
-            //     TalkTitle.textContent = Nextres[2];
-            //     subEventDetails.appendChild(TalkTitle);
-                
-            // }
+function adjustButtonPosition(ActivIndex) {
+    var img = document.getElementsByClassName("Activ-imgs")[ActivIndex-1];
+    const btnRight = document.querySelector('.btnRight');
+    const btnLeft = document.querySelector('.btnLeft');
+    if (img) {
+        const imgRect = img.getBoundingClientRect();
+        // Adjust right button position
+        btnRight.style.left = `${imgRect.width - 15}px`;
+        btnRight.style.top = `${imgRect.height/2+10}px`;
+        btnLeft.style.top = `${imgRect.height/2+10}px`;
+    }
+}
+window.addEventListener('resize', () => adjustButtonPosition(ActivIndex));
+window.addEventListener('load', () => adjustButtonPosition(ActivIndex));
