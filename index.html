@@ -15,6 +15,16 @@
     </head>
     <body>
         <div class="FullBody">
+            <!-- Overlay content -->
+            <div class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <img class="img-Privew">
+                <div class="overlayFooter"></div>
+            </div>
+
+            <div class="fullscreen-img">
+
+            </div>
             <div class="TabTitle">
                 <img id="MyImage" src="images/Me2.jpg" alt="MyImage">
                 <button class="Tab" onclick="showPanel(0,'#fff');">
@@ -833,72 +843,15 @@
                         <h3>ACTIVITIES</h3>
                         
                         <div class="activities-content">
-                            <div class="activity Researchers">
-                                <div class="Img-container">
+                            <div class="activity">
+                                <div class="Img-container" Id="Researchers" onclick="openNav(researcherImgList, 'images/Researchers-talks/')">
                                     <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Jabo-1.jpg">
-                                        <div class="ActivImg-txt">
-                                            Jabłonna 2021
-                                        </div>
+                                        <img class="ActivImg">
+                                        <div class="ActivImg-txt"></div>
                                     </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Jabo-2.jpg">
-                                        <div class="ActivImg-txt">
-                                            Jabłonna 2021
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Jabo-3.jpg">
-                                        <div class="ActivImg-txt">
-                                            Jabłonna 2021
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Jabo-4.jpg">
-                                        <div class="ActivImg-txt">
-                                            Jabłonna 2021
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-1.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-2.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-3.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-4.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-5.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <div class="Activ-imgs">
-                                        <img class="ActivImg" src="images/Researchers-talks/Scho-6.jpg">
-                                        <div class="ActivImg-txt">
-                                            Secondary schools, Gdansk 2022
-                                        </div>
-                                    </div>
-                                    <button class="ActivImgBtn btnLeft" onclick="AddImg(-1)">&#10094;</button>
-                                    <button class="ActivImgBtn btnRight" onclick="AddImg(1)">&#10095;</button>
                                 </div>
-                                
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, researcherImgList, 'images/Researchers-talks/', 0)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, researcherImgList, 'images/Researchers-talks/', 0)">&#10095;</button>
                                 <div class="Activ-details">
                                     <b class="ActivTitle">Researchers’ night in Poland</b>
                                     <div class="ActivDate">Septamber 2021 - October 2022</div>
@@ -909,8 +862,49 @@
                                     </ul>
                                 </div>
                             </div>
-                            <!-- <div class="activity ROV">
-                            </div> -->
+    
+                            <div class="activity">
+                                <div class="Img-container" Id="ROV2017" onclick="openNav(ROV17ImgList, 'images/ROV2017/')">
+                                    <div class="Activ-imgs">
+                                        <img class="ActivImg">
+                                        <div class="ActivImg-txt"></div>
+                                    </div>
+                                </div>
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, ROV17ImgList, 'images/ROV2017/', 1)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, ROV17ImgList, 'images/ROV2017/', 1)">&#10095;</button>
+                                <div class="Activ-details">
+                                    <b class="ActivTitle">ROV R&D Coordinator</b>
+                                    <div class="ActivDate">July 2016 - January 2017</div>
+                                    <p class="Activ-Discrp">Volunteer at Torpedo robotics team (student organization) seeking for sharing and improve experience in ROV building and development, I worked for Torpedo engineering innovation team with the following objectives.</p>
+                                    <ul class="Activ-Discrp points">
+                                        <li> Manage training for new team members and evaluate training tasks.</li>
+                                        <li> Manage R&D plans, tasks and budget for a season.</li>
+                                        <li> Improve cheap thrusters’ performance that saved more than 20% of ROV cost.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="activity">
+                                <div class="Img-container" Id="ROV2015-16" onclick="openNav(ROV15_16ImgList, 'images/ROV2015-16/')">
+                                    <div class="Activ-imgs">
+                                        <img class="ActivImg">
+                                        <div class="ActivImg-txt"></div>
+                                    </div>
+                                </div>
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, ROV15_16ImgList, 'images/ROV2015-16/', 2)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, ROV15_16ImgList, 'images/ROV2015-16/', 2)">&#10095;</button>
+                                <div class="Activ-details">
+                                    <b class="ActivTitle">Head of mechanical team</b>
+                                    <div class="ActivDate">February 2014 - June 2016</div>
+                                    <p class="Activ-Discrp">Volunteer at Torpedo robotics team (student organization) with the objective of building remotely operated vehicles (ROV) to perform certain tasks under water in order to participate in the international MATE ROV. The main role was:</p>
+                                    <ul class="Activ-Discrp points">
+                                        <li> Head of Mechanical sub-team (7-10 members) managing mechanical modeling, manufacturing and testing.</li>
+                                        <li> Part of team board leading the team stratigic plans and vision.</li>
+                                        <li> Boost designs using (FEA, CFD) as computational analysis specialist.</li>
+                                    </ul>
+                                    <p class="Activ-Discrp">The team achieved 2nd place in the regional competition, ranking 20/600 worldwide. The team had international representation at:[Long Beach City College, USA (2017), NASA Neutral Buoyancy Laboratory, USA (2016), and Memorial University of Newfoundland, Canada (2015)].</p>
+                                </div>
+                            </div>                            
                         </div>
 
                         <!-- <div class="w3-content" style="max-width:800px">
@@ -919,14 +913,14 @@
                             <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
                         </div> -->
                           
-                        <div class="w3-center">
-                            <div class="w3-section">
-                              <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                              <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+                        <div class="ActivityControllers">
+                            <button class="prevButton ActivButtonStyle" onclick="plusDivs(-1)">❮ Prev</button>
+                            <div class="demoButtons">
+                                <button class="demo ActivButtonStyle" onclick="currentDiv(1)">1</button>
+                                <button class="demo ActivButtonStyle" onclick="currentDiv(2)">2</button>
+                                <button class="demo ActivButtonStyle" onclick="currentDiv(3)">3</button>
                             </div>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                            <!-- <button class="w3-button demo" onclick="currentDiv(3)">3</button>  -->
+                            <button class="nextButton ActivButtonStyle" onclick="plusDivs(1)">Next ❯</button>
                         </div>
 
                     </div>
@@ -948,7 +942,7 @@
                     </ul>
                     <div class="row">
                         <div class="column">
-                          <img class="P-img" src="images\Portfolio\IMP PAN\LabScheme1.png">
+                          <!-- <img class="P-img" src="images\Portfolio\IMP PAN\LabScheme1.png"> -->
                           <!-- <img src="rocks.jpg">
                           <img src="falls2.jpg">
                           <img src="paris.jpg">

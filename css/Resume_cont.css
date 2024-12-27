@@ -293,44 +293,30 @@
     margin-top: 15px;
     padding: 20px;
     flex-direction: row;
+    /* height: max-content; */
 }
 
 .Img-container{
     display: flex;
-    align-items: stretch;
     width: 40%;
-    border-radius: 10px 10px 0px 0px;
-    /* min-height: 200px;
-    max-height: 300px; */
-    /* max-width: 300px; */
+    border-radius: 10px 0px 0px 0px;
+    /* height: 100%; */
 }
 
 .ActivImg{
     position: relative;
     display: block;
-    /* float: center; */
-    /* text-align: right; */
-    width: 100%; 
-    /* height: 270px; */
-    /* transform: translate(-50%, 0);
-    left: 50%; */
-    height: calc(100% - 22.5px);
-    /* max-height: 300px; */
-    /* min-width: 250px;
-    min-height: 150px; */
-    object-fit: cover;  
+    width: 100%;
+    height: calc(100% - 27px);
+    object-fit: cover;
     border-radius: 7.5px 0px 0px 0px;
-    /* max-width: 300px; */
+    cursor:pointer;
 }
 
 .ActivImg-txt{
     padding: 5px;
-    /* max-width: 291px; */
-    /* width: calc(40% - 25px); */
     width: calc(100% - 10px);
     background-color: rgba(0,0,0,0.5);
-    /* position: absolute; */
-    /* bottom: 20px; */
     right: calc(60%px);
     color: #fff;
     border-radius: 0px 0px 0px 7.5px;
@@ -376,17 +362,14 @@
     float: left;
     width: 100%;
     margin-left: 5px;
-
 }
 
 .Activ-Discrp{
     position: relative;
     float: left;
-    /* width: 50% ; */
     --max-lines: 3;
     max-height: calc(var(--lh) * var(--max-lines));
     text-align: left;
-    /* padding-left: 10px; */
     font-family: BravaSlabRegular;
     font-size: 11pt;
     color: gray;
@@ -401,8 +384,45 @@
 }
 
 .Activ-imgs{
-    display:none;
+    display:'block';
+    height: 100%;
 }
 
+.ActivButtonStyle{
+    margin: 3px;
+    margin-top: 5px;
+    padding: 3px 3px;
+    min-width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #002c3e;
+    border: 1px solid #002c3e;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    font-size: 12pt;
+    font-family: BravaSlabBold;
+}
+
+.ActivButtonStyle:hover{
+    background-color: #78bcc4;
+    color: #fff;
+}
+
+.ActivButtonStyle.activated{
+    background-color: #f7444e;
+    color: #fff;
+    padding-right: 3px;
+    transition: all 0.8s
+}
+
+.demoButtons{
+    display: inline;
+}
+
+.buttonRed{
+    background-color: #F7444E;
+    color: #fff;
+}
 
 

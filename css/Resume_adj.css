@@ -103,6 +103,10 @@
         margin-top: -7px;
     }
 
+    .ActivImg-txt{
+        font-size: 14px;
+    }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -137,7 +141,7 @@
     }
 
     .activity{
-        display: inline-block;
+        flex-direction: column;
     }
 
     .ActivTitle{

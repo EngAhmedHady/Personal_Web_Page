@@ -53,17 +53,84 @@ body{
     background-size: cover; */
     margin: 0px;
     padding: 0px;
+    border: 0px;
     width: 100%;
+    max-width: 100%;
+    /* overflow-x: hidden; */
 }
 
 .FullBody{
     float: center;
-    width: 100%;
+    width: 96%;
+    margin: 0px;
+    border: 0px;
     height: max-content;
     position: absolute;
     transform: translate(-50%, 0);
     left: 52%;
 }
+
+.overlay{
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    display: none;
+    width: 95%;
+    position: fixed; /* Stay in place */
+    z-index: 50; /* Sit on top */
+    left: 0;
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    border-radius: 20px;
+}
+
+.img-Privew{
+    /* position: relative; */
+    display: block;
+    top: 50%; /* 25% from the top */
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 95%; /* 100% width */
+    max-height: 80%;
+    object-fit: cover;
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 10px;
+}
+
+.overlayFooter{
+    position: relative;
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    max-height: 20%;
+    margin-top: 20px;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+  
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+  
 
 .Content{
     box-sizing: border-box;
@@ -106,7 +173,7 @@ h3{
     float: left;
     width: 15%;
     max-width: 200px;
-    z-index: 100;
+    z-index: 50;
     margin-left: 0px;
 }
 
@@ -374,7 +441,6 @@ tr{
         margin-left: 0px;
         height: 30px;
     }
-
 }
 
 
@@ -472,7 +538,11 @@ tr{
 
     .SMTit{
         width: 30%;
-    } 
+    }
+
+    .overlayFooter{
+        font-size: 20px;
+    }
 }
 
 

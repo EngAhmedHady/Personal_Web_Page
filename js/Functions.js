@@ -29,6 +29,7 @@ for (let i = 0; i < CVList.length; i++){
             }
         }
     })
+    adjustButtonPosition()
 }
 
 
@@ -50,16 +51,15 @@ else {
 
 document.addEventListener("DOMContentLoaded", function() {
     readCSVFile("Documents/ContactInfo.csv", 'tblcsvdata');
-  });
-
-  document.addEventListener("DOMContentLoaded", function() {
-    skillsFile("Documents/Skills.csv");
 });
 
+// document.addEventListener("DOMContentLoaded", function() {
+//     skillsFile("Documents/Skills.csv");
+// });
 
 document.addEventListener("DOMContentLoaded", function() {
     readtxtFile("Documents/Profile.txt", 'Profile');
-  });
+});
 
 // for (let i = 0; i < Exps.length; i++){
 //     document.addEventListener("DOMContentLoaded", function() {
@@ -288,10 +288,10 @@ function readtxtFile(FilePath, ParagraphId){
     request.responseType = 'blob';
     request.onload = function() {
         var reader = new FileReader();
-        reader.readAsText(request.response); // -------------------------------------- Read file as string
+        reader.readAsText(request.response); // ------------------ Read file as string
         // ************** Load event **************
         reader.onload = function(event) {
-            var csvdata = event.target.result; // ---------------------------------------------------- Read file data
+            var csvdata = event.target.result; // -------------------------- Read file data
             var Paragraph = document.getElementById(ParagraphId)
             // console.log('DataURL:', event.target.result);
             Paragraph.innerHTML = csvdata;
@@ -336,38 +336,197 @@ function myNewFunction(sel) {
 //   dots[slideIndex-1].className += " w3-red";
 // }
 
+// var resurcherImgPaths;
 
-var ActivIndex = 1;
-ActivImgShow(ActivIndex);
 
-function AddImg(n) {
-    ActivImgShow(ActivIndex += n);
-}
+// console.log("Image Path List:", resurcherImgPaths);
 
-function ActivImgShow(n) {
-  var i;
-  var x = document.getElementsByClassName("Activ-imgs");
-  if (n > x.length) {ActivIndex = 1}
-  if (n < 1) {ActivIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[ActivIndex-1].style.display = "block";
-  x[ActivIndex-1].style.height = "100%";
-  return ActivIndex
-}
 
-function adjustButtonPosition(ActivIndex) {
-    var img = document.getElementsByClassName("Activ-imgs")[ActivIndex-1];
-    const btnRight = document.querySelector('.btnRight');
-    const btnLeft = document.querySelector('.btnLeft');
-    if (img) {
-        const imgRect = img.getBoundingClientRect();
-        // Adjust right button position
-        btnRight.style.left = `${imgRect.width - 15}px`;
-        btnRight.style.top = `${imgRect.height/2+10}px`;
-        btnLeft.style.top = `${imgRect.height/2+10}px`;
+var researcherImgList = [
+    ['Jabo-1.jpg', 'Jabłonna 2021'], ['Jabo-2.jpg', 'Jabłonna 2021'], 
+    ['Jabo-3.jpg', 'Jabłonna 2021'], ['Jabo-4.jpg', 'Jabłonna 2021'],
+    ['Scho-1.jpg', 'Secondary schools, Gdansk 2022'], 
+    ['Scho-2.jpg', 'Secondary schools, Gdansk 2022'], 
+    ['Scho-3.jpg', 'Secondary schools, Gdansk 2022'], 
+    ['Scho-4.jpg', 'Secondary schools, Gdansk 2022'], 
+    ['Scho-5.jpg', 'Secondary schools, Gdansk 2022']
+]
+
+var ROV17ImgList = [
+    ['ROV17-0.jpg', 'Team training, 2017'], ['ROV17-2.jpg', 'ROV sketch, 2017'], 
+    ['ROV17-3.jpg', 'ROV model evaluation on CFD, 2017']
+]
+
+var ROV15_16ImgList = [
+    ['Team15.jpg', 'Torpedo team, 2014-2015'], 
+    ['Win2nd-1.jpg', 'Winning 2nd place in Regional competition, 2015'], 
+    ['canada2015-1.jpg', 'Torpedo team at Memorial University of Newfoundland, Canada (2015)'], 
+    ['canada2015-2.jpg', 'Torpedo team at Memorial University of Newfoundland, Canada (2015)'],
+    ['Team16.jpg', 'Torpedo team, 2015-2016'],
+    ['ROV16.jpg', 'Triton ROV, 2015-2016'], 
+    ['Win2nd-2.jpg', 'Winning 2nd place in Regional competition, 2016'], 
+    ['NBL16-1.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'], 
+    ['NBL16-2.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'],
+    ['NBL16-3.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'], 
+]
+
+var ActivIndex = 0;
+function LOADActiv(){
+    let Activ = document.getElementsByClassName("activity")
+    let Folders = ['Researchers-talks', 'ROV2017', 'ROV2015-16']
+    let ListOfLists = [researcherImgList, ROV17ImgList, ROV15_16ImgList]
+    for (let i = 0; i < Activ.length; i++) {
+        ActivImgShow(`images/${Folders[i]}/${ListOfLists[i][0][0]}`, 
+            ListOfLists[i][ActivIndex][1], i
+        )
     }
 }
-window.addEventListener('resize', () => adjustButtonPosition(ActivIndex));
-window.addEventListener('load', () => adjustButtonPosition(ActivIndex));
+LOADActiv()
+
+function AddImg(i, imgList, dirc, divID) {
+    n = imgList.length
+    ActivIndex += i
+    if (ActivIndex > n-1) {ActivIndex = 0}
+    if (ActivIndex < 0) {ActivIndex = n-1}
+    ActivImgShow(dirc+imgList[ActivIndex][0], imgList[ActivIndex][1], divID);
+    
+}
+
+function ActivImgShow(imgPath, lable, divID) {
+    var imgContainer = document.getElementsByClassName("ActivImg");
+    var lableContainer = document.getElementsByClassName("ActivImg-txt");
+    imgContainer[divID].src = imgPath
+    lableContainer[divID].textContent = lable
+    adjustButtonPosition()
+}
+
+function adjustButtonPosition() {
+    let img = document.getElementsByClassName("Activ-imgs");
+    const btnRight = document.querySelectorAll('.btnRight');
+    const btnLeft = document.querySelectorAll('.btnLeft');
+    for (let i = 0; i < img.length; i++) {
+        if (img[i]) {
+            const imgRect = img[i].getBoundingClientRect();
+            // Adjust right button position
+            btnRight[i].style.left = `${imgRect.width - 15}px`;
+            btnLeft[i].style.left = `${20}px`;
+            btnRight[i].style.top = `${imgRect.height/2+10}px`;
+            btnLeft[i].style.top = `${imgRect.height/2+10}px`;
+        }
+    }
+}
+window.addEventListener('resize', () => adjustButtonPosition());
+window.addEventListener('load', () => adjustButtonPosition());
+
+var slideshow = document.getElementById("Researchers");
+var imgsprop = document.getElementsByClassName("ActivImg");
+
+function reloadScrollBars() {
+    document.documentElement.style.overflow = 'auto';  // firefox, chrome
+    document.body.scroll = "yes"; // ie only
+}
+
+function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie only
+}
+
+function adjustoverlayheight() {
+    let overlay = document.getElementsByClassName("overlay")[0]
+    let vwh = document.documentElement.clientHeight
+    overlay.style.height = `${vwh-20}px`;
+    overlay.scrollIntoView(true)
+}
+
+window.addEventListener('resize', () => adjustoverlayheight());
+
+function ActivImgShowOverlay(imgPath, lable) {
+    console.log('Iamhere')
+    var imgContainer = document.getElementsByClassName("img-Privew");
+    var lableContainer = document.getElementsByClassName("overlayFooter");
+    imgContainer[0].src = imgPath
+    lableContainer[0].textContent = lable
+    // adjustButtonPosition()
+}
+
+function openNav(imgList, dirc) {
+    let overlay = document.getElementsByClassName("overlay")[0];
+    let vwh = document.documentElement.clientHeight;
+    overlay.style.display = "block";
+    overlay.scrollIntoView(true);
+    overlay.style.height = `${vwh-20}px`;
+    unloadScrollBars()
+    ActivImgShowOverlay(dirc+imgList[ActivIndex][0], imgList[ActivIndex][1]);
+}
+
+/* Close */
+function closeNav() {
+    document.getElementsByClassName("overlay")[0].style.display = "none";
+    reloadScrollBars()
+}
+
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+    let overlay = document.getElementsByClassName("overlay")[0];
+    let scrollPos = document.documentElement.scrollTop
+    overlay.style.top = `${scrollPos+10}px`;
+}
+// --------------------- Activities -------------------
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  let i;
+  let x = document.getElementsByClassName("activity");
+  let activLen = x.length
+  let dots = document.getElementsByClassName("demo");
+  if (n > activLen) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" buttonRed", "");
+  }
+  x[slideIndex-1].style.display = "flex";
+  if (activLen > 3 && slideIndex>1 && slideIndex<n){
+    dots[1].className += " buttonRed";
+    dots[1].textContent = slideIndex
+    dots[1].onclick = currentDiv(slideIndex)
+    dots[0].textContent = slideIndex-1
+    dots[0].onclick = currentDiv(slideIndex-1)
+    dots[2].textContent = slideIndex+1
+    dots[2].onclick = currentDiv(slideIndex+1)
+  }
+  else if(activLen > 3 && slideIndex==1){
+    dots[0].className += " buttonRed";
+    dots[0].textContent = slideIndex
+    dots[0].onclick = currentDiv(slideIndex)
+    dots[1].textContent = slideIndex+1
+    dots[1].onclick = currentDiv(slideIndex+1)
+    dots[2].textContent = slideIndex+2
+    dots[2].onclick = currentDiv(slideIndex+2)
+  }
+  else if(activLen > 3 && slideIndex==n){
+    dots[2].className += " buttonRed";
+    dots[2].textContent = slideIndex
+    dots[2].onclick = currentDiv(slideIndex)
+    dots[1].textContent = slideIndex-1
+    dots[1].onclick = currentDiv(slideIndex-1)
+    dots[0].textContent = slideIndex-2
+    dots[0].onclick = currentDiv(slideIndex-2)
+  }
+  else{
+    dots[slideIndex-1].className += " buttonRed";
+  }
+  adjustButtonPosition()
+}
