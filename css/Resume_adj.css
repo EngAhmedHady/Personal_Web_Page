@@ -146,10 +146,11 @@
 
     .ActivTitle{
         padding-top: 10px;
-    }    
+    } 
 
     .Activ-details{
         width: 100%;
+        font-size: 8pt;
     }
 
     .Img-container{

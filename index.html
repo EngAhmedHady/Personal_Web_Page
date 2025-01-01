@@ -844,14 +844,14 @@
                         
                         <div class="activities-content">
                             <div class="activity">
-                                <div class="Img-container" Id="Researchers" onclick="openNav(researcherImgList, 'images/Researchers-talks/')">
+                                <div class="Img-container" Id="Researchers" onclick="openNav(0)">
                                     <div class="Activ-imgs">
                                         <img class="ActivImg">
                                         <div class="ActivImg-txt"></div>
                                     </div>
                                 </div>
-                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, researcherImgList, 'images/Researchers-talks/', 0)">&#10094;</button>
-                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, researcherImgList, 'images/Researchers-talks/', 0)">&#10095;</button>
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, 0)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, 0)">&#10095;</button>
                                 <div class="Activ-details">
                                     <b class="ActivTitle">Researchers’ night in Poland</b>
                                     <div class="ActivDate">Septamber 2021 - October 2022</div>
@@ -864,18 +864,21 @@
                             </div>
     
                             <div class="activity">
-                                <div class="Img-container" Id="ROV2017" onclick="openNav(ROV17ImgList, 'images/ROV2017/')">
+                                <div class="Img-container" Id="ROV2017" onclick="openNav(1)">
                                     <div class="Activ-imgs">
                                         <img class="ActivImg">
                                         <div class="ActivImg-txt"></div>
                                     </div>
                                 </div>
-                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, ROV17ImgList, 'images/ROV2017/', 1)">&#10094;</button>
-                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, ROV17ImgList, 'images/ROV2017/', 1)">&#10095;</button>
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, 1)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, 1)">&#10095;</button>
                                 <div class="Activ-details">
                                     <b class="ActivTitle">ROV R&D Coordinator</b>
                                     <div class="ActivDate">July 2016 - January 2017</div>
-                                    <p class="Activ-Discrp">Volunteer at Torpedo robotics team (student organization) seeking for sharing and improve experience in ROV building and development, I worked for Torpedo engineering innovation team with the following objectives.</p>
+                                    <p class="Activ-Discrp">
+                                        Volunteer at Torpedo robotics team (<a href="https://www.facebook.com/torpedobrotherhood" target="_blank">student organization</a>) seeking for sharing and improve experience in ROV building and development,
+                                        I worked for Torpedo engineering innovation team with the following objectives.
+                                    </p>
                                     <ul class="Activ-Discrp points">
                                         <li> Manage training for new team members and evaluate training tasks.</li>
                                         <li> Manage R&D plans, tasks and budget for a season.</li>
@@ -885,26 +888,87 @@
                             </div>
 
                             <div class="activity">
-                                <div class="Img-container" Id="ROV2015-16" onclick="openNav(ROV15_16ImgList, 'images/ROV2015-16/')">
+                                <div class="Img-container" Id="ROV2015-16" onclick="openNav(2)">
                                     <div class="Activ-imgs">
                                         <img class="ActivImg">
                                         <div class="ActivImg-txt"></div>
                                     </div>
                                 </div>
-                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, ROV15_16ImgList, 'images/ROV2015-16/', 2)">&#10094;</button>
-                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, ROV15_16ImgList, 'images/ROV2015-16/', 2)">&#10095;</button>
+                                <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, 2)">&#10094;</button>
+                                <button class="ActivImgBtn btnRight" onclick="AddImg(1, 2)">&#10095;</button>
                                 <div class="Activ-details">
                                     <b class="ActivTitle">Head of mechanical team</b>
                                     <div class="ActivDate">February 2014 - June 2016</div>
-                                    <p class="Activ-Discrp">Volunteer at Torpedo robotics team (student organization) with the objective of building remotely operated vehicles (ROV) to perform certain tasks under water in order to participate in the international MATE ROV. The main role was:</p>
+                                    <p class="Activ-Discrp">
+                                        Volunteer at Torpedo robotics team (<a href="https://www.facebook.com/torpedobrotherhood" target="_blank">student organization</a>) with the objective of building remotely operated vehicles
+                                        (ROV) to perform certain tasks under water in order to participate in the international MATE ROV. The main role was:
+                                    </p>
                                     <ul class="Activ-Discrp points">
                                         <li> Head of Mechanical sub-team (7-10 members) managing mechanical modeling, manufacturing and testing.</li>
                                         <li> Part of team board leading the team stratigic plans and vision.</li>
                                         <li> Boost designs using (FEA, CFD) as computational analysis specialist.</li>
                                     </ul>
-                                    <p class="Activ-Discrp">The team achieved 2nd place in the regional competition, ranking 20/600 worldwide. The team had international representation at:[Long Beach City College, USA (2017), NASA Neutral Buoyancy Laboratory, USA (2016), and Memorial University of Newfoundland, Canada (2015)].</p>
+                                    <p class="Activ-Discrp">
+                                        The team achieved 2nd place in the regional competition, ranking 20/600 worldwide. The team had international representation at:
+                                        [Long Beach City College, USA (2017), NASA Neutral Buoyancy Laboratory, USA (2016), and Memorial University of Newfoundland, Canada (2015)].
+                                    </p>
                                 </div>
-                            </div>                            
+                            </div>
+                        </div>
+
+                        <div class="activity">
+                            <div class="Img-container" Id="ScienceClub" onclick="openNav(3)">
+                                <div class="Activ-imgs">
+                                    <img class="ActivImg">
+                                    <div class="ActivImg-txt"></div>
+                                </div>
+                            </div>
+                            <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, 3)">&#10094;</button>
+                            <button class="ActivImgBtn btnRight" onclick="AddImg(1, 3)">&#10095;</button>
+                            <div class="Activ-details">
+                                <b class="ActivTitle">Volunteer at Science Club</b>
+                                <div class="ActivDate">May 2012 - June 2016</div>
+                                <p class="Activ-Discrp">
+                                    Volunteered with the Science Club (<a href="https://www.facebook.com/ScienceClub4Alex" target="_blank">student organization</a>), established in 2011, which organizes workshops and events such as Science Week and
+                                    "<a href="https://www.facebook.com/Lets.Make.a.Robot" target="_blank">Lets Make a Robot</a>" (LMR) to foster creativity and scientific curiosity at Alexandria University. Responsibilities included:
+                                </p>
+                                <ul class="Activ-Discrp points">
+                                    <li> Co-founder and Chairman for a couple of years leading many events including Lets Make a Robot 2013 and 2014 and the
+                                        scientific part of Orphans day, hosting ROV trainings 2014 in Alexandria University, and more.</li>
+                                    <li> Editor-in-Chief of six issues of Scince club scientific magazine.</li>
+                                    <li> Media member Graphic designer and video editor/creator for 2015-2016 season.</li>
+                                    <li> A part of Lets Make a Robot competition technical and Judging team for 2015-2017 sesons.</li>
+                                </ul>
+                                <p class="Activ-Discrp">
+                                    During my leadership (2012-2014), the team achieved significant milestones, including distributing over 8,000 copies of the magazine,
+                                    organizing more than 20 events, including four major ones, and leading robotics training sessions for over 38 teams and 220 students,
+                                    including non-engineers, with more than 650 attendees. Additionally, I spearheaded the creation of the team’s rulebook, ensuring its
+                                    sustainability and continued success to this day.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="activity">
+                            <div class="Img-container" Id="MIA14" onclick="openNav(4)">
+                                <div class="Activ-imgs">
+                                    <img class="ActivImg">
+                                    <div class="ActivImg-txt"></div>
+                                </div>
+                            </div>
+                            <button class="ActivImgBtn btnLeft" onclick="AddImg(-1, 4)">&#10094;</button>
+                            <button class="ActivImgBtn btnRight" onclick="AddImg(1, 4)">&#10095;</button>
+                            <div class="Activ-details">
+                                <b class="ActivTitle">Mechanical team member</b>
+                                <div class="ActivDate">July 2013 - July 2014</div>
+                                <p class="Activ-Discrp">
+                                    Volunteer at MIA (Made In Alex) team (<a href="https://www.facebook.com/mia.robotics" target="_blank">student organization</a>) with the objective of building two ground vehicle robots
+                                    (one manually operated and another outmaticlly operated) for Robocon Local competition. The main role was:
+                                </p>
+                                <ul class="Activ-Discrp points">
+                                    <li> Developing and manufacturing automatic humanoid robot.</li>
+                                    <li> Design and manufacturing the automatic robot with large grippers.</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <!-- <div class="w3-content" style="max-width:800px">
@@ -1051,6 +1115,7 @@
                 </a>
             </div>
         </div>
+        <script src="js/FunctionsVariables.js"></script>
         <script src="js/Functions.js"></script>
     </body>
 </html>

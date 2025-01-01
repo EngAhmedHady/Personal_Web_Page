@@ -1,10 +1,3 @@
-var tabButton = document.querySelectorAll(".Tab");
-var tabIcon = document.querySelectorAll(".Icon");
-var Icons = ['ProfileIcon', 'ResumeIcon', 'PortfolioIcon', 'ContactMeIcon']
-var tabPanels = document.querySelectorAll(".Content");
-var PIndex;
-var LastObj = 0
-
 // var Exps = ['Experience1', 'Experience2']
 // var Tra = ['Training1','Training2','Training3']
 // var Edu = ['Education1','Education2','Education3']
@@ -80,11 +73,6 @@ document.addEventListener("DOMContentLoaded", function() {
 // }
 
 // collapsible functions
-var coll = document.getElementsByClassName("collapsible");
-var Objects = document.getElementsByClassName("Objects")
-var subPeriods = document.getElementsByClassName("subPeriod")
-var confCont = document.getElementsByClassName("ConferencesContent");
-var SkillsDetails = document.getElementsByClassName("SkillsUndertitle");
 // single Item Collapsible
 for (let i = 0; i < coll.length; i++) {coll[i].textContent = '>'}
 
@@ -158,11 +146,6 @@ for (let i = 0; i < coll.length; i++) {
 }
 
 // Collapsible all
-var ToggleBtn = document.getElementsByClassName("ToggleBtn");
-var SkillsDegs = document.getElementsByClassName("SkillsDegree");
-var SkillsSum = document.getElementsByClassName("SkillsSummary");
-var exp = 0;
-var ExpTxt = document.getElementById("ExpAllTxt")
 ExpTxt.textContent = "EXPAND ALL"
 for (let i = 0; i < ToggleBtn.length; i++) {
     ToggleBtn[i].addEventListener("click", function() {
@@ -239,7 +222,7 @@ function showPanel(PanelIndex, ColorCode)
     tabButton[PanelIndex].style.boxShadow = "none";    
     tabPanels[PanelIndex].style.display = "block";
     tabPanels[PanelIndex].style.backgroundColor = ColorCode;
-    adjustButtonPosition(1)
+    adjustButtonPosition()
 }
 
 function PanelIndexPass(Index)
@@ -340,63 +323,39 @@ function myNewFunction(sel) {
 
 
 // console.log("Image Path List:", resurcherImgPaths);
-
-
-var researcherImgList = [
-    ['Jabo-1.jpg', 'Jabłonna 2021'], ['Jabo-2.jpg', 'Jabłonna 2021'], 
-    ['Jabo-3.jpg', 'Jabłonna 2021'], ['Jabo-4.jpg', 'Jabłonna 2021'],
-    ['Scho-1.jpg', 'Secondary schools, Gdansk 2022'], 
-    ['Scho-2.jpg', 'Secondary schools, Gdansk 2022'], 
-    ['Scho-3.jpg', 'Secondary schools, Gdansk 2022'], 
-    ['Scho-4.jpg', 'Secondary schools, Gdansk 2022'], 
-    ['Scho-5.jpg', 'Secondary schools, Gdansk 2022']
-]
-
-var ROV17ImgList = [
-    ['ROV17-0.jpg', 'Team training, 2017'], ['ROV17-2.jpg', 'ROV sketch, 2017'], 
-    ['ROV17-3.jpg', 'ROV model evaluation on CFD, 2017']
-]
-
-var ROV15_16ImgList = [
-    ['Team15.jpg', 'Torpedo team, 2014-2015'], 
-    ['Win2nd-1.jpg', 'Winning 2nd place in Regional competition, 2015'], 
-    ['canada2015-1.jpg', 'Torpedo team at Memorial University of Newfoundland, Canada (2015)'], 
-    ['canada2015-2.jpg', 'Torpedo team at Memorial University of Newfoundland, Canada (2015)'],
-    ['Team16.jpg', 'Torpedo team, 2015-2016'],
-    ['ROV16.jpg', 'Triton ROV, 2015-2016'], 
-    ['Win2nd-2.jpg', 'Winning 2nd place in Regional competition, 2016'], 
-    ['NBL16-1.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'], 
-    ['NBL16-2.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'],
-    ['NBL16-3.jpg', 'Torpedo team at Neutral Buoyancy Lab, NASA (2016)'], 
-]
-
 var ActivIndex = 0;
 function LOADActiv(){
     let Activ = document.getElementsByClassName("activity")
-    let Folders = ['Researchers-talks', 'ROV2017', 'ROV2015-16']
-    let ListOfLists = [researcherImgList, ROV17ImgList, ROV15_16ImgList]
     for (let i = 0; i < Activ.length; i++) {
         ActivImgShow(`images/${Folders[i]}/${ListOfLists[i][0][0]}`, 
-            ListOfLists[i][ActivIndex][1], i
+            ListOfLists[i][ActivImgIndx[i]][1], i
         )
     }
 }
 LOADActiv()
 
-function AddImg(i, imgList, dirc, divID) {
+function AddImg(i, divID) {
+    imgList = ListOfLists[divID]
     n = imgList.length
-    ActivIndex += i
-    if (ActivIndex > n-1) {ActivIndex = 0}
-    if (ActivIndex < 0) {ActivIndex = n-1}
-    ActivImgShow(dirc+imgList[ActivIndex][0], imgList[ActivIndex][1], divID);
-    
+    ActivImgIndx[divID] += i
+    if (ActivImgIndx[divID] > n-1) {ActivImgIndx[divID] = 0}
+    if (ActivImgIndx[divID] < 0) {ActivImgIndx[divID] = n-1}
+    imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
+    ActivImgShow(imgDirc, imgList[ActivImgIndx[divID]][1], divID);    
 }
 
 function ActivImgShow(imgPath, lable, divID) {
-    var imgContainer = document.getElementsByClassName("ActivImg");
-    var lableContainer = document.getElementsByClassName("ActivImg-txt");
-    imgContainer[divID].src = imgPath
-    lableContainer[divID].textContent = lable
+    var imgContainer = document.getElementsByClassName("ActivImg")[divID];
+    var lableContainer = document.getElementsByClassName("ActivImg-txt")[divID];
+    imgContainer.src = imgPath
+    lableContainer.textContent = lable
+    if (lableContainer.clientHeight > 0){
+        imgContainer.style.height = `calc(100% - ${lableContainer.clientHeight}px)`
+    }
+    else{
+        imgContainer.style.height = `calc(100% - 27px)`
+    }
+   
     adjustButtonPosition()
 }
 
@@ -441,7 +400,6 @@ function adjustoverlayheight() {
 window.addEventListener('resize', () => adjustoverlayheight());
 
 function ActivImgShowOverlay(imgPath, lable) {
-    console.log('Iamhere')
     var imgContainer = document.getElementsByClassName("img-Privew");
     var lableContainer = document.getElementsByClassName("overlayFooter");
     imgContainer[0].src = imgPath
@@ -449,14 +407,16 @@ function ActivImgShowOverlay(imgPath, lable) {
     // adjustButtonPosition()
 }
 
-function openNav(imgList, dirc) {
+function openNav(divID) {
     let overlay = document.getElementsByClassName("overlay")[0];
     let vwh = document.documentElement.clientHeight;
     overlay.style.display = "block";
     overlay.scrollIntoView(true);
     overlay.style.height = `${vwh-20}px`;
     unloadScrollBars()
-    ActivImgShowOverlay(dirc+imgList[ActivIndex][0], imgList[ActivIndex][1]);
+    imgList = ListOfLists[divID]
+    imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
+    ActivImgShowOverlay(imgDirc, imgList[ActivImgIndx[divID]][1]);
 }
 
 /* Close */
@@ -478,10 +438,14 @@ showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
+  let controlbox = document.getElementsByClassName("ActivityControllers")[0];
+  controlbox.scrollIntoView(true);
 }
 
 function currentDiv(n) {
   showDivs(slideIndex = n);
+  let controlbox = document.getElementsByClassName("ActivityControllers")[0];
+  controlbox.scrollIntoView(true);
 }
 
 function showDivs(n) {
@@ -498,34 +462,31 @@ function showDivs(n) {
     dots[i].className = dots[i].className.replace(" buttonRed", "");
   }
   x[slideIndex-1].style.display = "flex";
-  if (activLen > 3 && slideIndex>1 && slideIndex<n){
+  if (activLen > 3 && slideIndex > 1 && slideIndex < activLen){
     dots[1].className += " buttonRed";
     dots[1].textContent = slideIndex
-    dots[1].onclick = currentDiv(slideIndex)
+    dots[1].setAttribute('onclick',`currentDiv(${slideIndex})`)
+
     dots[0].textContent = slideIndex-1
-    dots[0].onclick = currentDiv(slideIndex-1)
+    dots[0].setAttribute('onclick',`currentDiv(${slideIndex-1})`)
     dots[2].textContent = slideIndex+1
-    dots[2].onclick = currentDiv(slideIndex+1)
+    dots[2].setAttribute('onclick',`currentDiv(${slideIndex+1})`)
   }
-  else if(activLen > 3 && slideIndex==1){
+  else if(activLen > 3 && slideIndex == 1){
     dots[0].className += " buttonRed";
     dots[0].textContent = slideIndex
-    dots[0].onclick = currentDiv(slideIndex)
     dots[1].textContent = slideIndex+1
-    dots[1].onclick = currentDiv(slideIndex+1)
     dots[2].textContent = slideIndex+2
-    dots[2].onclick = currentDiv(slideIndex+2)
   }
-  else if(activLen > 3 && slideIndex==n){
+  else if(activLen > 3 && (slideIndex) == activLen){
+    // console.log('Iamthere')
     dots[2].className += " buttonRed";
     dots[2].textContent = slideIndex
-    dots[2].onclick = currentDiv(slideIndex)
     dots[1].textContent = slideIndex-1
-    dots[1].onclick = currentDiv(slideIndex-1)
     dots[0].textContent = slideIndex-2
-    dots[0].onclick = currentDiv(slideIndex-2)
   }
   else{
+    // console.log('Iamhere')
     dots[slideIndex-1].className += " buttonRed";
   }
   adjustButtonPosition()

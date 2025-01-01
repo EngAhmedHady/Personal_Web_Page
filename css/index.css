@@ -105,14 +105,15 @@ body{
     font-size: 30px;
     text-align: center;
     max-height: 20%;
-    margin-top: 20px;
+    margin: 20px;
+
 }
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
     position: absolute;
     top: 20px;
-    right: 45px;
+    right: 30px;
     font-size: 60px;
 }
 
@@ -441,6 +442,11 @@ tr{
         margin-left: 0px;
         height: 30px;
     }
+
+    /* .overlay .closebtn {
+        right: 45px;
+    } */
+
 }
 
 
