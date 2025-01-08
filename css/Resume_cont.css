@@ -161,6 +161,49 @@
     font-style: italic
 }
 
+#PubDetails{
+    position: relative;
+    display:flex;
+    width: 100%;
+    /* height: max-content; */
+    margin: 0px;
+    float: left;
+}
+
+.PublicationsContent{
+    margin: 0px;
+    /* to collapse */
+    /* height: 0px; */
+    display: none;
+    overflow: hidden;
+    max-height:0px ;
+    transition: max-height 0.2s ease-out;
+    /* ----------- */
+}
+
+.PubAPA{
+    margin: 0px 5px;
+    padding-top: 0px;
+    margin-left: 5px;
+    font-size: 12pt;
+    width: 100%;
+    position: relative;
+}
+
+.PubBibtex{
+    display: none;
+    border: 1px solid rgb(140, 140, 140, 0.5);
+    font-family: monospace;
+    white-space: pre-line;
+    background-color: #f1f3e1;
+    margin: 0px 5px;
+}
+
+.BibtexButton{
+    display: inline-block;
+    position: relative;
+}
+
 #jobSummary{
     margin-top: 0;
     margin-bottom: 0px;
@@ -322,6 +365,8 @@
     right: calc(60%px);
     color: #fff;
     border-radius: 0px 0px 0px 7.5px;
+    font-family: BravaSlablight;
+    font-size: 12pt;
 }
 
 .ActivImgBtn{

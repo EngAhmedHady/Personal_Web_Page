@@ -10,6 +10,7 @@ var coll = document.getElementsByClassName("collapsible");
 var Objects = document.getElementsByClassName("Objects");
 var subPeriods = document.getElementsByClassName("subPeriod");
 var confCont = document.getElementsByClassName("ConferencesContent");
+var pubCont = document.getElementsByClassName("PublicationsContent");
 var SkillsDetails = document.getElementsByClassName("SkillsUndertitle");
 
 // ------------------ Collapsible all -----------------

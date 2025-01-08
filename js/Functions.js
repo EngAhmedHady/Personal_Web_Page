@@ -118,6 +118,25 @@ for (let i = 0; i < coll.length; i++) {
             }
         }
     }
+
+    if (this.id == "PublicationsCol"){
+        Object.style.display = "none";
+        subPeriod.style.display = "none";
+        for (let k = 0; k < confCont.length; k++) {
+            if (pubCont[k].style.display == "flex") {
+                pubCont[k].style.display = "none";
+                pubCont[k].style.maxHeight = "0px";
+                pubCont[k].style.marginTop = "0px";
+                this.textContent = '>'
+            } else {
+                pubCont[k].style.display = "flex";
+                pubCont[k].style.marginTop = "10px";
+                pubCont[k].style.maxHeight = pubCont[k].scrollHeight + "px";
+                this.textContent = '-'
+            }
+        }
+    }
+
     // 
     if (this.id == "SkillDetail"){
         let skillsDegrees = SkillsDetails[colindx-10].querySelectorAll('.SkillsDegree');
@@ -163,6 +182,11 @@ for (let i = 0; i < ToggleBtn.length; i++) {
             confCont[k].style.marginTop = "10px";
             confCont[k].style.maxHeight = confCont[k].scrollHeight + "px";
         }
+        for (let k = 0; k < pubCont.length; k++) {
+            pubCont[k].style.display = "flex";
+            pubCont[k].style.marginTop = "10px";
+            pubCont[k].style.maxHeight = pubCont[k].scrollHeight + "px";
+        }
         for (let k = 0; k < SkillsDegs.length; k++) {
             SkillsDegs[k].style.display = "inline-block";
             SkillsDegs[k].style.maxHeight = SkillsDegs[k].scrollHeight + "px";
@@ -183,6 +207,11 @@ for (let i = 0; i < ToggleBtn.length; i++) {
             confCont[k].style.display = "none";
             confCont[k].style.maxHeight = "0px";
             confCont[k].style.marginTop = "0px";
+        }
+        for (let k = 0; k < pubCont.length; k++) {
+            pubCont[k].style.display = "none";
+            pubCont[k].style.maxHeight = "0px";
+            pubCont[k].style.marginTop = "0px";
         }
         for (let k = 0; k < SkillsDegs.length; k++) {
             SkillsSum[k].style.width = "auto";
@@ -291,6 +320,22 @@ function myNewFunction(sel) {
     // alert(sel.options[sel.selectedIndex].value == );
 }
 
+// Copytext
+function copyToClipboard(ID) {
+    // Get the text field
+    var copyText = document.getElementById(ID);
+    let text = copyText.textContent
+    let result = text.replace(/^\s+|\s+$/gm,'');
+    // Select the text field
+    // copyText.textContent;
+    // copyText.setSelectionRange(0, 99999); // For mobile devices
+    //&nbsp;&nbsp;
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(result);
+  
+    // Alert the copied text
+    alert("Copied the text: " + result);
+  }
 
 // var slideIndex = 1;
 // showDivs(slideIndex);
@@ -335,12 +380,12 @@ function LOADActiv(){
 LOADActiv()
 
 function AddImg(i, divID) {
-    imgList = ListOfLists[divID]
-    n = imgList.length
+    let imgList = ListOfLists[divID]
+    let n = imgList.length
     ActivImgIndx[divID] += i
     if (ActivImgIndx[divID] > n-1) {ActivImgIndx[divID] = 0}
     if (ActivImgIndx[divID] < 0) {ActivImgIndx[divID] = n-1}
-    imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
+    let imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
     ActivImgShow(imgDirc, imgList[ActivImgIndx[divID]][1], divID);    
 }
 
@@ -414,9 +459,25 @@ function openNav(divID) {
     overlay.scrollIntoView(true);
     overlay.style.height = `${vwh-20}px`;
     unloadScrollBars()
-    imgList = ListOfLists[divID]
-    imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
+    let imgList = ListOfLists[divID]
+    let imgDirc = `images/${Folders[divID]}/${imgList[ActivImgIndx[divID]][0]}`
     ActivImgShowOverlay(imgDirc, imgList[ActivImgIndx[divID]][1]);
+    let indx = ActivImgIndx[divID]
+    let n = imgList.length
+    document.addEventListener('keydown', function(event) {
+        if(event.keyCode == 37) {
+            indx--
+            if (indx < 0){indx = n-1}
+            imgDirc = `images/${Folders[divID]}/${imgList[indx][0]}`
+            ActivImgShowOverlay(imgDirc, imgList[indx][1]);
+        }
+        else if(event.keyCode == 39) {
+            indx++
+            if (indx > n-1){indx = 0}
+            imgDirc = `images/${Folders[divID]}/${imgList[indx][0]}`
+            ActivImgShowOverlay(imgDirc, imgList[indx][1]);
+        }
+    });
 }
 
 /* Close */
