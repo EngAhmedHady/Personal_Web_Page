@@ -1,0 +1,10 @@
+images\Researchers-talks\Jabo-1.jpg
+images\Researchers-talks\Jabo-2.jpg
+images\Researchers-talks\Jabo-3.jpg
+images\Researchers-talks\Jabo-4.jpg
+images\Researchers-talks\Scho-1.jpg
+images\Researchers-talks\Scho-2.jpg
+images\Researchers-talks\Scho-3.jpg
+images\Researchers-talks\Scho-4.jpg
+images\Researchers-talks\Scho-5.jpg
+images\Researchers-talks\Scho-6.jpg

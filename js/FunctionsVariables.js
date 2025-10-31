@@ -71,3 +71,6 @@ var MIA14ImgList = [
 var Folders = ['Researchers-talks', 'ROV2017', 'ROV2015-16', 'SC','MIA14']
 var ListOfLists = [researcherImgList, ROV17ImgList, ROV15_16ImgList, SC_ImgList, MIA14ImgList]
 var ActivImgIndx = new Array(Folders.length).fill(0)
+
+// =====================
+var overlay = document.getElementsByClassName("overlay")[0];

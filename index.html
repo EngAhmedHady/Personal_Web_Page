@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="css/Resume_struc.css">
         <link rel="stylesheet" type="text/css" href="css/Resume_cont.css">
         <link rel="stylesheet" type="text/css" href="css/Resume_adj.css">
+        <link rel="stylesheet" type="text/css" href="css/Portfolio.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
@@ -98,7 +99,8 @@
 
                 <div class="divider"></div>
                 <h3 class = "TableTitle">My Latest News</h3>
-                <iframe class="linkedinPosts" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7173271560793767937" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                <iframe class="linkedinPosts" src="https://www.linkedin.com/embed/feed/update/urn:li:share:7383412777606094848?collapsed=1" height="530" max-width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                <!-- <iframe class="linkedinPosts" src="https://www.linkedin.com/embed/feed/update/urn:li:share:7312382987520647169?collapsed=1" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> -->
                 <!-- <div class='sk-ww-linkedin-profile-post' data-embed-id='172510'></div><script src='https://widgets.sociablekit.com/linkedin-profile-posts/widget.js' async defer></script> -->
                 
                 <div class="divider"></div>
@@ -160,7 +162,15 @@
                                     <div id = "EventLine"></div>
                                 </div>
                                 <div id = "ExpDetails">
-                                    <p id = 'jobSummary'>Full-time employment at IMP PAN transonic wind tunnel as experimental aerodynamics specialist</p>
+                                    <p id = 'jobSummary'>
+                                        Expert in transonic testing, and advanced data analysis. Actively contributed to EU research projects in collaboration with major industry partners.
+                                        <ul> 
+                                            <li><strong>Core Competencies:</strong> Wind tunnel operation, Schlieren (high-speed, multi-color), BOS, LDA, oil visualization.</li>
+                                            <li><strong>Data Analysis & Software:</strong> Python tools for image/signal processing, statistics, boundary layer, isentropic flow, shock tracking.</li>
+                                            <li><strong>Instrumentation & Control:</strong> LabVIEW/DAQs for feedback and camera triggering (±0.3ms trigger accuracy); flow control (suction, Reynolds).</li>
+                                        </ul>
+                                        <strong>Project Experience:</strong>
+                                    </p>
                                     <div id="subDetails">
                                         <div id="SubEvent">
                                             <div class="Event collapsible"></div>
@@ -172,9 +182,8 @@
                                                 <h5 id="SubDetailsTitle"><a href="http://smartwing.org/SMS/EU/" target="_blank">SMS Project</a> (Vibrating trailing edge of a morphing supercritical airfoil)</h5>
                                             </div>
                                             <ul class="Objects">
-                                                <li>Perform POD analysis on PIV Data for Airbus A320 aerofoil in transonic regime to remove noise from the velocity dataset.</li>
-                                                <li>Process the velocity fluctuations in the wake of the aerofoil with a vibrating trailing edge.</li>
-                                                <li>Process the travelling signal from the vibrating trailing edge to the shock system from schlieren.</li>
+                                                <li>Performed POD analysis on transonic PIV data for noise reduction.</li>
+                                                <li>Analysed the impact of vibrating trailing edges on shock wave unsteadiness.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -193,14 +202,10 @@
                                                 <h5 id="SubDetailsTitle"><a href="https://h2020-teamaero.eu/" target="_blank">TEAMAero Project</a> (SBLI on compressor rotor profile with flow control)</h5>
                                             </div>
                                             <ul class="Objects">
-                                                <li>Lead the test planning to investigate manufacturing and surface roughness effects on transonic compressor fan profile.</li>
+                                                <li>Led test planning for fan profile surface roughness studies.</li>
                                                 <li>Coordinated the collaboration with Rolls Royce Deutschland to apply the surface texture on the suction side of the profile.</li>
-                                                <li>Operate a blowdown wind tunnel with a single passage test section of a compressor fan profile.</li>
-                                                <li>Carry out measurements using several techniques (Schlieren, Oil visualization, LDA, etc.).</li>
-                                                <li>Improve wind tunnel feedback system and Fast camera triggering using LabVIEW and DAQs devices with an accuracy of 0.06s.</li>
-                                                <li>Increase the efficiency of the piping system and isolation by 30%.</li>
-                                                <li>Analyse the measurement data, match, and interpret results.</li>
-                                                <li>Develop Python tools and models for Image/signal processing, test data, and analysis, machine learning, etc.</li>
+                                                <li>The study revealed a reduction in separation by 1%, and momentum thickness by 10% but increase in shock unsteadiness by 23%.</li>
+                                                <li>Implemented an inlet valve for Reynolds number control in stator profile testing.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -412,7 +417,35 @@
                                             <div class="Objects"></div>
                                         </div>
                                     </div>
-    
+                                    <div class = "ConferencesContent" id="ConfDetails">
+                                        <div id="SubEvent">
+                                            <div class="subEventPoint"></div>
+                                            <div id="ConfLine"></div>
+                                        </div>
+                                        <div id="subEventDetails">
+                                            <div class="ConfDate">Septamber 2025</div>                                        
+                                            <div id="TitleOfSubDetails">
+                                                <h5 id="SubDetailsTitle">3nd Colloquium on Separation Control in High-Speed Flows - mechanisms, methods, and application</h5>
+                                            </div>
+                                            <a id="TalkTitle" href="https://doi.org/10.5281/zenodo.15884448" target="_blank">“Investigation Of Surface Texture Effect On Shock Wave Boundary Layer Interaction On Transonic Fan Profile”</a>
+                                            <p id="ConfAdress">(Munich - Germany), on-site</p>
+                                        </div>
+                                    </div>
+
+                                    <div class = "ConferencesContent" id="ConfDetails">
+                                        <div id="SubEvent">
+                                            <div class="subEventPoint"></div>
+                                            <div id="ConfLine"></div>
+                                        </div>
+                                        <div id="subEventDetails">
+                                            <div class="ConfDate">March 2025</div>                                        
+                                            <div id="TitleOfSubDetails">
+                                                <h5 id="SubDetailsTitle">European Conference on Turbomachinery Fluid Dynamics and Thermodynamics, ETC16</h5>
+                                            </div>
+                                            <a id="TalkTitle" href="https://doi.org/10.5281/zenodo.15884448" target="_blank">“Experimental Studies of ShockWave Boundary Layer Interaction on Suction Side of Fan Representative Profile”</a>
+                                            <p id="ConfAdress">(Hannover - Germany), on-site</p>
+                                        </div>
+                                    </div>
                                     <div class = "ConferencesContent" id="ConfDetails">
                                         <div id="SubEvent">
                                             <div class="subEventPoint"></div>
@@ -483,6 +516,63 @@
                                             <div class="Objects"></div>
                                         </div>
                                     </div>
+
+                                    <div class = "PublicationsContent" id="PubDetails">
+                                        <div id="SubEvent">
+                                            <div class="subEventPoint"></div>
+                                            <div id="ConfLine"></div>
+                                        </div>
+                                        <div id="subEventDetails">
+                                            <div id="TitleOfSubDetails">
+                                                <p class= "PubAPA" id = "Hanfy(2026)Enhanced">Hanfy, A. H., Flaszynski, P., Doerffer, P., & Kaczynski, P. (2026). <strong style="color: black;">Enhanced line-scanning method for shock wave tracking in high-speed schlieren imaging.</strong> Aerospace Science and Technology, 111022. DOI:&nbsp;<a href="https://doi.org/10.1016/j.ast.2025.111022" target="_blank">10.1016/j.ast.2025.111022</a></p>
+                                            </div>
+                                            <div class= "PubBibtex" id = "Hanfy(2026)Enhanced(Bib)">@article{Hanfy2026Enhanced,
+                                                title = {Enhanced line-scanning method for shock wave tracking in high-speed schlieren imaging},
+                                                volume = {168},
+                                                ISSN = {1270-9638},
+                                                url = {http://dx.doi.org/10.1016/j.ast.2025.111022},
+                                                DOI = {10.1016/j.ast.2025.111022},
+                                                journal = {Aerospace Science and Technology},
+                                                publisher = {Elsevier BV},
+                                                author = {Hanfy,  Ahmed H. and Kaczynski,  Piotr and Doerffer,  Piotr and Flaszynski,  Pawel},
+                                                year = {2026},
+                                                month = jan,
+                                                pages = {111022}
+                                                }
+                                            </div>
+                                            <strong>Copy to clipboard: </strong>
+                                            <button class="APAButton ActivButtonStyle" onclick="copyToClipboard('Hanfy(2026)Enhanced')">APA</button>
+                                            <button class="BibtexButton ActivButtonStyle" onclick="copyToClipboard('Hanfy(2026)Enhanced(Bib)')">Bibtex</button>
+                                        </div>
+                                    </div>
+
+                                    <div class = "PublicationsContent" id="PubDetails">
+                                        <div id="SubEvent">
+                                            <div class="subEventPoint"></div>
+                                            <div id="ConfLine"></div>
+                                        </div>
+                                        <div id="subEventDetails">
+                                            <div id="TitleOfSubDetails">
+                                                <p class= "PubAPA" id = "Hanfy(2025)Surface">Hanfy, A.H., Flaszyński, P., Kaczyński, P., Doerffer, P.(2025). <strong style="color: black;">Surface Roughness Effect on Shock Boundary Layer Interaction on Compressor Rotor Profile.</strong> In: Flaszynski, P., Babinsky, H., Doerffer, P. (eds) Towards Effective Flow Control and Mitigation of Shock Effects in Aeronautical Applications . Notes on Numerical Fluid Mechanics and Multidisciplinary Design, vol 201. Springer, Cham. DOI:&nbsp;<a href="https://doi.org/10.1007/978-3-031-86605-0_15" target="_blank">10.1007/978-3-031-86605-0_15</a></p>
+                                            </div>
+                                            <div class= "PubBibtex" id = "Hanfy(2025)Surface(Bib)">@Inbook{Hanfy2025Surface,
+                                                author={Hanfy, Ahmed H. and Flaszy{\'{n}}ski, Pawel and Kaczy{\'{n}}ski, Piotr and Doerffer, Piotr},
+                                                editor={Flaszynski, Pawel and Babinsky, Holger and Doerffer, Piotr},
+                                                title={Surface Roughness Effect on Shock Boundary Layer Interaction on Compressor Rotor Profile},
+                                                bookTitle={Towards Effective Flow Control and Mitigation of Shock Effects in Aeronautical Applications},
+                                                year={2025},
+                                                publisher={Springer Nature Switzerland},
+                                                address={Cham},
+                                                pages={325--344},
+                                                isbn={978-3-031-86605-0},
+                                                doi={10.1007/978-3-031-86605-0_15},
+                                                }
+                                            </div>
+                                            <strong>Copy to clipboard: </strong>
+                                            <button class="APAButton ActivButtonStyle" onclick="copyToClipboard('Hanfy(2025)Surface')">APA</button>
+                                            <button class="BibtexButton ActivButtonStyle" onclick="copyToClipboard('Hanfy(2025)Surface(Bib)')">Bibtex</button>
+                                        </div>
+                                    </div>
     
                                     <div class = "PublicationsContent" id="PubDetails">
                                         <div id="SubEvent">
@@ -491,7 +581,7 @@
                                         </div>
                                         <div id="subEventDetails">
                                             <div id="TitleOfSubDetails">
-                                                <p class= "PubAPA" id = "Nel(2024)Effect"> Nel, P. L., Janke, C., Vasilopoulos, I., Swoboda, M., Schreyer, A.-M., Hady, A., & Flaszyński, P. (2024). <strong style="color: black;">Effect of Transition on Self-Sustained Shock Oscillations in Highly Loaded Transonic Rotors.</strong> AIAA Journal, 0(0):1–13. DOI:&nbsp;<a href="https://doi.org/10.2514/1.J063378" target="_blank">10.2514/1.J063378</a></p>
+                                                <p class= "PubAPA" id = "Nel(2024)Effect"> Nel, P. L., Janke, C., Vasilopoulos, I., Swoboda, M., Schreyer, A.-M., Hady, A., & Flaszyński, P. (2024). <strong style="color: black;">Effect of Transition on Self-Sustained Shock Oscillations in Highly Loaded Transonic Rotors.</strong> AIAA Journal, 0(0):1-13. DOI:&nbsp;<a href="https://doi.org/10.2514/1.J063378" target="_blank">10.2514/1.J063378</a></p>
                                             </div>
                                             <div class= "PubBibtex" id = "Nel(2024)Effect(Bib)">@article{Nel(2024)Effect,
                                                 author = {Nel, Philipp L. and Janke, Christian and Vasilopoulos, Ilias and Swoboda, Marius and Schreyer, Anne-Marie and Hady, Ahmed and Flaszy\'{n}ski, Pawe\l{}},
@@ -518,7 +608,7 @@
                                             <div id="TitleOfSubDetails">
                                                 <p class= "PubAPA" id = "Nel(2023)Towards"> Nel, P. L., Pirozzoli, S., Swoboda, M., Grothe, P., Weiss, J. Hady, A. & Flaszyński, F. (2023). <strong style="color: black;">Towards Resolving Natural Shock Oscillation and Mitigation of Altitude Excitation in a Transonic Fan.</strong> In AIAA AVIATION 2023 Forum (p. 4001). DOI:&nbsp;<a href="https://doi.org/10.2514/6.2023-4001" target="_blank">10.2514/6.2023-4001</a></p>
                                             </div>
-                                            <div class= "PubBibtex" id = "Nel(2024)Effect(Bib)">@inbook{Nel(2023)Towards,
+                                            <div class= "PubBibtex" id = "Nel(2023)Effect(Bib)">@inbook{Nel(2023)Towards,
                                                 author = {Philipp L. Nel  and   Sergio Pirozzoli  and   Marius Swoboda  and   Patrick Grothe  and   Julien Weiss  and   Ahmed Hady  and   Paweł Flaszyński },
                                                 title = {Towards Resolving Natural Shock Oscillation and Mitigation of Altitude Excitation in a Transonic Fan},
                                                 booktitle = {AIAA AVIATION 2023 Forum},
@@ -531,7 +621,7 @@
                                             </div>
                                             <strong>Copy to clipboard: </strong>
                                             <button class="APAButton ActivButtonStyle" onclick="copyToClipboard('Nel(2023)Towards')">APA</button>
-                                            <button class="BibtexButton ActivButtonStyle" onclick="">Bibtex</button>
+                                            <button class="BibtexButton ActivButtonStyle" onclick="copyToClipboard('Nel(2023)Effect(Bib)')">Bibtex</button>
                                         </div>
                                     </div>
 
@@ -1063,47 +1153,78 @@
                 <div class="divider"></div>
                 <section>
                     <ul class = HeaderItems>
-                        <li class = "CVlist activated" data-filter = "all">Show all</li>
-                        <li class = "CVlist" data-filter = "CAD">CAD</li>
-                        <li class = "CVlist" data-filter = "CFD">CFD</li>
-                        <li class = "CVlist" data-filter = "CODE">CODE</li>
-                        <li class = "CVlist" data-filter = "PS">PS designs</li>
-                        <li class = "CVlist" data-filter = "Others">Others</li>
+                        <li class = "Portfoliolist activated" data-filter = "all">Show all</li>
+                        <li class = "Portfoliolist" data-filter = "CAD">CAD</li>
+                        <li class = "Portfoliolist" data-filter = "CFD">CFD</li>
+                        <li class = "Portfoliolist" data-filter = "CODE">CODE</li>
+                        <li class = "Portfoliolist" data-filter = "GD">Graphic Design</li>
+                        <li class = "Portfoliolist" data-filter = "Others">Others</li>
                     </ul>
-                    <div class="row">
-                        <div class="column">
-                          <!-- <img class="P-img" src="images\Portfolio\IMP PAN\LabScheme1.png"> -->
-                          <!-- <img src="rocks.jpg">
-                          <img src="falls2.jpg">
-                          <img src="paris.jpg">
-                          <img src="nature.jpg">
-                          <img src="mist.jpg">
-                          <img src="paris.jpg"> -->
+                    <div class="Portfolio-content">
+                        <div class="project-port" data-item = "CODE">
+                            <div class="portfolioCover">
+                                <img src="images\Portfolio\IMP PAN\Histo.png" alt="BSA Histogram" class="P-img">
+                                <div class="portfolioCover-overlay">
+                                    <h4 class="project-title">BSA Data AnalysisTool for LDA measurements</h4>
+                                    <p class="project-descr"> 
+                                        A Python script processes LDA data from multiple acquisition files at
+                                        the same physical location ("joining points"). It calculates key statistics
+                                        and can visualize velocity distributions with histograms.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="column">
-                          <!-- <img src="underwater.jpg">
-                          <img src="ocean.jpg">
-                          <img src="wedding.jpg">
-                          <img src="mountainskies.jpg">
-                          <img src="rocks.jpg">
-                          <img src="underwater.jpg"> -->
+                        <div class="project-port" data-item = "CODE">
+                            <div class="portfolioCover">
+                                <img src="images\Portfolio\IMP PAN\CWT.png" alt="complex Morlet wavelets" class="P-img">
+                                <div class="portfolioCover-overlay">
+                                    <h4 class="project-title">Morlet Continuous Wavelet Transform (CWT)</h4>
+                                    <p class="project-descr"> 
+                                        A Python script for the Continuous Wavelet Transform (CWT), using complex Morlet
+                                        wavelets, analyzes the temporal evolution of spectral signatures in signals by
+                                        decomposing them into highly localized time-frequency components.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="column">
-                          <!-- <img src="wedding.jpg">
-                          <img src="rocks.jpg">
-                          <img src="falls2.jpg">
-                          <img src="paris.jpg">
-                          <img src="nature.jpg">
-                          <img src="mist.jpg">
-                          <img src="paris.jpg"> -->
+                        <div class="project-port" data-item = "CODE">
+                            <div class="portfolioCover">
+                                <img src="images\Portfolio\IMP PAN\STL.gif" alt="Shock tracking" class="P-img">
+                                <div class="portfolioCover-overlay">
+                                    <h4 class="project-title">Shock Tracking Library</h4>
+                                    <p class="project-descr">
+                                        A Python package utilizes a novel line-scanning method to detect and track shock waves
+                                        from high-speed schlieren images, aiding in the prediction of shock wave instability
+                                        for aerodynamics, even in low-resolution conditions.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="column">
-                          <!-- <img src="underwater.jpg">
-                          <img src="ocean.jpg">
-                          <img src="wedding.jpg">
-                          <img src="mountainskies.jpg">
-                          <img src="rocks.jpg">
-                          <img src="underwater.jpg"> -->
+                        <div class="project-port" data-item = "CODE">
+                            <div class="portfolioCover">
+                                <img src="images\Portfolio\IMP PAN\ImgRecon2.jpg" alt="Curved Surface Reconstruction" class="P-img">
+                                <div class="portfolioCover-overlay">
+                                    <h4 class="project-title">Curved Surface Reconstruction Library</h4>
+                                    <p class="project-descr">
+                                        A new method proposes flattening the suction side of a constant chord airfoil with
+                                        a single camera to achieve true scale-mapped surface imaging, critical for analyzing
+                                        complex flow behaviors like shock structures and interactions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-port" data-item = "CAD">
+                            <div class="portfolioCover">
+                                <img src="images\Portfolio\IMP PAN\LabScheme1.png" alt="windtunnel" class="P-img">
+                                <div class="portfolioCover-overlay">
+                                    <h4 class="project-title">Test section design improvement</h4>
+                                    <p class="project-descr">
+                                       During my tenure as an Aerodynamics Specialist at IMP PAN in Poland, 
+                                       I implemented modifications to a transonic fan profile single-passage 
+                                       test section and enhanced wind tunnel operations.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                       </div>
                 </section>
@@ -1153,9 +1274,9 @@
                     <input type="text" id="subjectTitle" name="Subject" placeholder="Subject">
                     
                     <textarea id="message" name="message" placeholder="Write something"></textarea>
+
                     <input id="Submit" class="DownloadCV" type="reset" value="Clear">
                     <input id="Submit" class="DownloadCV" type="submit" value="Submit">
-                    
                 </form>
             </div>
 

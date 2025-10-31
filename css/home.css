@@ -62,7 +62,7 @@
 }
 
 .linkedinPosts{
-    height: 942px;
+    max-height: 942px;
     width: 504px;
 }
 

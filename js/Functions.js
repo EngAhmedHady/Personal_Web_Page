@@ -3,7 +3,8 @@
 // var Edu = ['Education1','Education2','Education3']
 
 let CVList = document.querySelectorAll('.CVlist')
-let CVData = document.querySelectorAll('.CVData')
+let CVData = document.querySelectorAll('.CVData') 
+let column = document.querySelectorAll('.project-port') 
 
 for (let i = 0; i < CVList.length; i++){
     CVList[i].addEventListener("click", function(){
@@ -23,6 +24,30 @@ for (let i = 0; i < CVList.length; i++){
         }
     })
     adjustButtonPosition()
+}
+
+
+let Portfoliolist = document.querySelectorAll('.Portfoliolist')
+for (let i = 0; i < Portfoliolist.length; i++){
+    Portfoliolist[i].addEventListener("click", function(){
+        for (let j = 0; j<Portfoliolist.length; j++){
+            Portfoliolist[j].classList.remove('activated');
+        }
+        this.classList.add('activated');
+
+        let dataFilter = this.getAttribute('data-filter');
+        // console.log(dataFilter)
+
+        for (let k =0; k < column.length; k++){
+            column[k].classList.add('hide');
+            column[k].classList.remove('active');
+            console.log(dataFilter, column[k].getAttribute('data-item'))
+            if(column[k].getAttribute('data-item') == dataFilter || dataFilter == "all"){
+                column[k].classList.add('active')
+                column[k].classList.remove('hide')
+            }
+        }
+    })
 }
 
 
@@ -122,7 +147,7 @@ for (let i = 0; i < coll.length; i++) {
     if (this.id == "PublicationsCol"){
         Object.style.display = "none";
         subPeriod.style.display = "none";
-        for (let k = 0; k < confCont.length; k++) {
+        for (let k = 0; k < pubCont.length; k++) {
             if (pubCont[k].style.display == "flex") {
                 pubCont[k].style.display = "none";
                 pubCont[k].style.maxHeight = "0px";
@@ -139,8 +164,8 @@ for (let i = 0; i < coll.length; i++) {
 
     // 
     if (this.id == "SkillDetail"){
-        let skillsDegrees = SkillsDetails[colindx-10].querySelectorAll('.SkillsDegree');
-        let SkillsSummary = SkillsDetails[colindx-10].querySelectorAll('.SkillsSummary');
+        let skillsDegrees = SkillsDetails[colindx-11].querySelectorAll('.SkillsDegree');
+        let SkillsSummary = SkillsDetails[colindx-11].querySelectorAll('.SkillsSummary');
         // console.log(SkillsD[indx-10])
         // Object.style.display = "none";
         // subPeriod.style.display = "none";
@@ -326,14 +351,7 @@ function copyToClipboard(ID) {
     var copyText = document.getElementById(ID);
     let text = copyText.textContent
     let result = text.replace(/^\s+|\s+$/gm,'');
-    // Select the text field
-    // copyText.textContent;
-    // copyText.setSelectionRange(0, 99999); // For mobile devices
-    //&nbsp;&nbsp;
-     // Copy the text inside the text field
     navigator.clipboard.writeText(result);
-  
-    // Alert the copied text
     alert("Copied the text: " + result);
   }
 
@@ -453,7 +471,6 @@ function ActivImgShowOverlay(imgPath, lable) {
 }
 
 function openNav(divID) {
-    let overlay = document.getElementsByClassName("overlay")[0];
     let vwh = document.documentElement.clientHeight;
     overlay.style.display = "block";
     overlay.scrollIntoView(true);
@@ -478,7 +495,38 @@ function openNav(divID) {
             ActivImgShowOverlay(imgDirc, imgList[indx][1]);
         }
     });
+
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    function checkDirection(){
+        if (touchendX < touchstartX){
+            indx--
+            if (indx < 0){indx = n-1}
+            imgDirc = `images/${Folders[divID]}/${imgList[indx][0]}`
+            ActivImgShowOverlay(imgDirc, imgList[indx][1]);
+        }
+        else if(touchendX > touchstartX) {
+            indx++
+            if (indx > n-1){indx = 0}
+            imgDirc = `images/${Folders[divID]}/${imgList[indx][0]}`
+            ActivImgShowOverlay(imgDirc, imgList[indx][1]);
+        }
+    }
+
+    overlay.addEventListener("touchstart", (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+        checkDirection()
+    });
+
+    overlay.addEventListener("touchstart", (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        checkDirection()
+    });
+
 }
+
+
 
 /* Close */
 function closeNav() {
@@ -552,3 +600,73 @@ function showDivs(n) {
   }
   adjustButtonPosition()
 }
+
+// -------------------- portfolio -----------------------------
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  let portfolioColumn, i;
+  portfolioColumn = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < portfolioColumn.length; i++) {
+    w3RemoveClass(portfolioColumn[i], "show");
+    if (portfolioColumn[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function AddClass(element, name) {
+  let i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function RemoveClass(element, name) {
+  let i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+function truncateText() {
+  var elements = document.getElementsByClassName("project-descr");
+  for (var i = 0; i < elements.length; i++) {
+    var text = elements[i].innerHTML;
+    var truncated = text.substring(0, 300) + "..." + "  read more>>";
+    elements[i].innerHTML = truncated;
+  }
+}
+
+// function truncateText() {
+//   const elements = document.getElementsByClassName("project-descr");
+
+//   for (let el of elements) {
+//     const originalText = el.innerHTML;
+//     let text = originalText;
+//     let truncated = false;
+//     console.log(el.clientHeight, el.scrollHeight)
+//     while (el.scrollHeight > el.clientHeight+1 && text.length > 0) {
+//       text = text.slice(0, -1); // remove last character
+//       el.innerHTML = text + "...";
+//       truncated = true;
+//     }
+
+//     if (!truncated) {
+//       el.innerHTML = originalText; // restore if no truncation needed
+//     }
+//   }
+// }
+
+truncateText()

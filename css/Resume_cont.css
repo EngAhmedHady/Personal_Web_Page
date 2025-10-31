@@ -161,11 +161,10 @@
     font-style: italic
 }
 
-#PubDetails{
+.PublicationsContent{
     position: relative;
     display:flex;
     width: 100%;
-    /* height: max-content; */
     margin: 0px;
     float: left;
 }
@@ -365,7 +364,6 @@
     right: calc(60%px);
     color: #fff;
     border-radius: 0px 0px 0px 7.5px;
-    font-family: BravaSlablight;
     font-size: 12pt;
 }
 
